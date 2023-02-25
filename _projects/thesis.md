@@ -16,7 +16,7 @@ I tried my very best to make the work as reproducible as possible.
 If you are interested, take a look at the GitHub page:
 <div class="repositories d-flex flex-wrap flex-md-row flex-column justify-content-between align-items-center margin-bottom:1cm">
     {% include repository/repo.html repository="wulfdewolf/lpt-for-eeg" %}
-    <br/>
+    <br/><br/>
 </div>
   
 The thesis itself can be found [there](https://github.com/wulfdewolf/lpt-for-eeg/blob/main/thesis.pdf) there as well.  
