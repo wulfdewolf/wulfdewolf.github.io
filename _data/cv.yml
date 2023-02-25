@@ -2,96 +2,85 @@
   type: map
   contents:
     - name: Full Name
-      value: Albert Einstein
+      value: Wolf De Wulf
     - name: Date of Birth
-      value: 14th March 1879
+      value: 23rd March 2023
     - name: Languages
-      value: English, German
+      value: Flemish, French, English
 
 - title: Education
   type: time_table
   contents:
-    - title: PhD
-      institution: University of Zurich, Zurich, Switzerland
-      year: 1905
+    - title: PhD Biomedical AI
+      institution: University of Edinburgh, Edinburgh, United Kingdom
+      year: 2023 - 2026
       description:
-        - Description 1.
-        - Description 2.
-        - title: Description 3.
-          contents:
-            - Sub-description 1.
-            - Sub-description 2.
-    - title: Federal teaching diploma
-      institution: Eidgenössische Technische Hochschule, Zurich, Switzerland
-      year: 1900
+        - As part of the UKRI Centre for Doctoral Training (CDT) in Biomedical AI
+    - title: MSc Biomedical AI
+      institution: University of Edinburgh, Edinburgh, United Kingdom
+      year: 2023
       description:
-        - Description 1.
-        - Description 2.
+        - As part of the UKRI Centre for Doctoral Training (CDT) in Biomedical AI
+    - title: "MSc Applied Sciences and Engineering: Computer Science"
+      institution: Vrije Universiteit Brussel, Brussel, Belgium
+      year: 2020-2022
+      description:
+        - Summa Cum Laude (93%)
+    - title: BSc Computer Science
+      institution: Vrije Universiteit Brussel, Brussel, Belgium
+      year: 2017-2020
+      description:
+        - Magna Cum Laude (84%)
+    - title: ICT Summer School
+      institution: Xidian University, Xi'an, China
+      year: August 2018
 
 - title: Experience
   type: time_table
   contents:
-    - title: Professor of Theoretical Physics
-      institution: Institute for Advanced Study, Princeton University
-      year: 1933 - 1955
+    - title: Developer
+      institution: Vrije Universiteit Brussel, Brussel, Belgium
+      year: 2021
       description:
-        - Description 1.
-        - Description 2.
-        - title: Description 3.
-          contents:
-            - Sub-description 1.
-            - Sub-description 2.
-    - title: Visiting Professor
-      institution: California Institute of Technology, Pasadena, California, US
-      year: 1933
+        - Developed a proof-of-concept mobile application for psychologists to manage patients
+        - Machine learning was used to match patients to institutions
+    - title: Store manager
+      institution: Elisabeth, Brussels, Belgium
+      year: August 2017
       description:
-        - Description 1.
-        - Description 2.
+        - Managed a small chocolate/delicacy store in the centre of Brussels
 
-    - title: Director
-      institution: Kaiser Wilhelm Institute for Physics, Berlin, Germany.
-      year: 1917-1933
-
-    - title: Professor of Theoretical Physics
-      institution: Karl-Ferdinand University, Prague, Czechoslovakia
-      year: 1911 - 1917
-      description:
-
-    - title: Associate Professor of Theoretical Physics
-      institution: University of Zurich, Zurich, Switzerland
-      year: 1909 - 1911
-
-- title: Open Source Projects
+- title: Community Involvement
   type: time_table
   contents:
-    - title: <a href="https://github.com/alshedivat/al-folio">al-folio</a>
-      year: 2015-now
-      description: A beautiful, simple, clean, and responsive Jekyll theme for academics.
+    - title: Student representative
+      institution: Vrije Universiteit Brussel, Brussel, Belgium
+      year: 2018-2022
+      description:
+        - BSc Computer Science programme council
+        - MSc Computer Science programme council
+        - Comission student affairs
+        - Education comission
 
 - title: Honors and Awards
   type: time_table
   contents:
-    - year: 1921
+    - year: 2022
       items: 
-        - Nobel Prize in Physics 
-        - Matteucci Medal
-    - year: 2029
-      items: 
-        - Max Planck Medal
+        - Vrije Universiteit Brussel Prize of Science
+        - BrEA Student Engineering Prize
 
 - title: Academic Interests
   type: nested_list
   contents:
-    - title: Topic 1.
+    - title: Computational Neuroscience
       items: 
-        - Description 1.
-        - Description 2.
-    - title: Topic 2.
+        - Latent Variable Models
+    - title: Prosthetics
       items:
-        - Description 1.
-        - Description 2.
+        - EEG/EMG decoding
 
 - title: Other Interests
   type: list
   contents:
-    - <u>Hobbies:</u> Hobby 1, Hobby 2, etc.
+    - <u>Hobbies:</u> Running, Belgian Beer, Whisky
