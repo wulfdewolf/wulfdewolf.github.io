@@ -13,12 +13,14 @@ In an [article](https://arxiv.org/abs/2103.05247) published by a collaboration b
 While the results were not spectacular, I did find some knowledge transfer from the language domain to the EEG domain.
 
 I tried my very best to make the work as reproducible as possible.  
-If you are interested, take a look at the GitHub page:
+If you are interested, take a look at the GitHub repository:
 <div class="repositories d-flex flex-wrap flex-md-row flex-column justify-content-between align-items-center">
-    <p>{% include repository/repo.html repository="wulfdewolf/lpt-for-eeg" %}</p>
+    {% include repository/repo.html repository="wulfdewolf/lpt-for-eeg" %}
 </div>
-  
+<br/>
 The thesis itself can be found [there](https://github.com/wulfdewolf/lpt-for-eeg/blob/main/thesis.pdf) there as well.  
 Additionally, I published a summary of the results on [Weights & Biases](https://wandb.ai/wulfdewolf/lpt-for-eeg/reports/Transfer-Learning-in-Brain-Computer-Interfaces-Language-Pretrained-Transformers-for-Classifying-Electroencephalography--VmlldzoxOTIxNDU2).
 
 An [extended abstract](https://bnaic2022.uantwerpen.be/wp-content/uploads/BNAICBeNeLearn_2022_submission_2852.pdf) of the thesis was accepted at [BNAIC](https://bnaic2022.uantwerpen.be/), where I presented it in a short talk.
+
+Supervisors: [Prof. Dr. Geraint Wiggins](https://ai.vub.ac.be/team/geraint-wiggins) & [Prof. Dr. Kevin De Pauw](https://mfys.research.vub.be/en/kevin-de-pauw)
