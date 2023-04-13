@@ -9,9 +9,9 @@ profile:
   image: prof_pic.jpg
   image_circular: false # crops the image to make it circular
   address: >
-    <p>Bayes Centre</p>
-    <p>47 Potterrow<p>
-    <p>Edinburgh EH8 9BT</p>
+    <p>Informatics Forum</p>
+    <p>10 Crichton Street<p>
+    <p>Edinburgh EH8 9AB</p>
 
 news: true  # includes a list of news items
 selected_papers: true # includes a list of papers marked as "selected={true}"
@@ -24,4 +24,3 @@ I graduated with a specialisation in artificial intelligence at the
 
 At the moment, I am in the MScR year of the CDT. I am working on extracting digit movements from electromyographic (EMG) recordings.
 Next year, I intend to start working on my PhD. Its topic has not yet been finalised, but it will relate to computational neuroscience and latent variable models.
-I will possibly be looking at spiking networks and reinforcement learning as well.
