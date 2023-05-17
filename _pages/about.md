@@ -18,9 +18,9 @@ selected_papers: true # includes a list of papers marked as "selected={true}"
 social: true  # includes social icons at the bottom of the page
 ---
 
-Hi, my name is Wolf De Wulf and I am a computer scientist from Belgium.  
-I graduated with a specialisation in artificial intelligence at the 
-[Vrije Universiteit Brussel](https://www.vub.be), and I am currently part of the 2022 cohort of the [UKRI CDT in Biomedical AI](https://web.inf.ed.ac.uk/cdt/biomedical-ai) at the [University of Edinburgh](https://www.ed.ac.uk/).
+Hi, my name is Wolf De Wulf and I am a computer scientist from Brussels, Belgium.  
+I studied artificial intelligence (AI) at the 
+[Vrije Universiteit Brussel](https://www.vub.be), and I am currently researching AI in biomedical contexts, as part of the 2022 cohort of the [UKRI CDT in Biomedical AI](https://web.inf.ed.ac.uk/cdt/biomedical-ai) at the [University of Edinburgh](https://www.ed.ac.uk/).
 
-At the moment, I am in the MScR year of the CDT. I am working on extracting digit movements from electromyographic (EMG) recordings.
+At the moment, I am in the MScR year of the CDT. I am working on extracting finger movements from electromyographic (EMG) recordings, with the intention of building better prosthetics.
 Next year, I intend to start working on my PhD. Its topic has not yet been finalised, but it will relate to computational neuroscience and latent variable models.
