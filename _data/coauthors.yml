@@ -1,17 +1,17 @@
 "Bogaerts":
-  - firstname: ["Bart Bogaerts"]
+  - firstname: ["Bart", "B.", "B. B.", "Bart Bogaerts"]
     url: https://www.bartbogaerts.eu/ 
 
 "Vandesande":
-  - firstname: ["Dieter Vandesande"]
+  - firstname: ["Dieter", "D.", "D. S.", "Dieter Vandesande"]
     url: https://www.linkedin.com/in/dieter-vandesande/?originalSubdomain=be
 
 "Pradipta Gema":
-  - firstname: ["Aryo Pradipta Gema"]
+  - firstname: ["Aryo", "A.", "A. P. G.", "Aryo Pradipta Gema"]
     url: https://aryopg.github.io/
 
 "Grabarczyk":
-  - firstname: ["Dominik Grabarczyk"]
+  - firstname: ["Dominik", "D.", "D. G.", "Dominik Grabarczyk"]
     url: https://nl.linkedin.com/in/dominik-grabarczyk
 
 
