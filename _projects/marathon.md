@@ -43,3 +43,20 @@ I registered for the half-marathon, just to get a feel for how such events go do
 
 The marathon itself is on the 28th of May 2023.
 If all goes well, you will find some pictures here from that day, the week after!
+
+**Update:**
+I finished the marathon in 3 hours and 56 minutes.
+In other words: a great success!
+The weather was great, maybe even a bit to great, I think I overheated a bit around the 40th kilometer.
+Luckily, the adrenaline I got from all the encouring people at the end got me back on track.
+
+Proof:
+<div class="row justify-content-sm-center">
+    <div class="col-sm-6 mt-3 mt-md-0">
+        {% include figure.html path="assets/img/marathon_strava.jpg" title="marathon" class="img-fluid rounded z-depth-1" %}
+    </div>
+    <div class="col-sm-6 mt-3 mt-md-0">
+        {% include figure.html path="assets/img/marathon_me.png" title="strava" class="img-fluid rounded z-depth-1" %}
+    </div>
+</div>
+(ignore the trademarks on the picture, £10 for a picture is beyond my PhD stiped)
