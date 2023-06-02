@@ -53,7 +53,7 @@ Luckily, the adrenaline I got from all the encouring people at the end got me ba
 Proof:
 <div class="row justify-content-sm-center">
     <div class="col-sm-6 mt-3 mt-md-0">
-        {% include figure.html path="assets/img/marathon_me.png" title="strava" class="img-fluid rounded z-depth-1" %}
+        {% include figure.html path="assets/img/marathon_me.jpg" title="strava" class="img-fluid rounded z-depth-1" %}
     </div>
     <div class="col-sm-6 mt-3 mt-md-0">
         {% include figure.html path="assets/img/marathon_strava.jpg" title="marathon" class="img-fluid rounded z-depth-1" %}
