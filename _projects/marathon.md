@@ -59,4 +59,4 @@ Proof:
         {% include figure.html path="assets/img/marathon_strava.jpg" title="marathon" class="img-fluid rounded z-depth-1" %}
     </div>
 </div>
-(ignore the trademarks on the picture, £10 for a picture is beyond my PhD stiped)
+(ignore the trademarks on the picture, £10 for a picture is beyond my PhD stipend)
