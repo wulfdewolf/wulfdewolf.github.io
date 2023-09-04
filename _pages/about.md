@@ -22,5 +22,6 @@ Hi, my name is Wolf De Wulf and I am a computer scientist from Brussels, Belgium
 I studied artificial intelligence (AI) at the 
 [Vrije Universiteit Brussel](https://www.vub.be), and I am currently researching AI in biomedical contexts, as part of the 2022 cohort of the [UKRI CDT in Biomedical AI](https://web.inf.ed.ac.uk/cdt/biomedical-ai) at the [University of Edinburgh](https://www.ed.ac.uk/).
 
-At the moment, I am in the MScR year of the CDT. I am working on extracting finger movements from electromyographic (EMG) recordings, with the intention of building better prosthetics.
-Next year, I intend to start working on my PhD. Its topic has not yet been finalised, but it will relate to computational neuroscience and latent variable models.
+I just started my PhD for which I am investigating spatial codes in the hippocampus and medial entorhinal cortex.
+By analysing neural recordings of mice performing virtual reality navigation tasks I aim to find out how different types of neurons in these brain regions collaborate to allow us to find our way and survive.
+I am jointly supervised by [Professor Matthias Hennig](https://homepages.inf.ed.ac.uk/mhennig/) and [Professor Matthew Nolan](https://nolanlab.mvm.ed.ac.uk/).

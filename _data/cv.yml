@@ -73,12 +73,15 @@
 - title: Academic Interests
   type: nested_list
   contents:
+    - title: Neuroscience
+      items:
+        - Hippocampus
+        - Medial Entorhinal Cortex
+        - Spatial coding
     - title: Computational Neuroscience
       items: 
+        - Dimensionality Reduction
         - Latent Variable Models
-    - title: Prosthetics
-      items:
-        - EEG/EMG decoding
 
 - title: Other Interests
   type: list
