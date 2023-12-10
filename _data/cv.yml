@@ -16,11 +16,17 @@
       year: 2023 - 2026
       description:
         - As part of the UKRI Centre for Doctoral Training (CDT) in Biomedical AI
+    - title: Autumn School 
+      institution: Ulster University, Derry, United Kingdom
+      year: October 2023
+      description:
+        - Computational Neuroscience, Neurotechnology and Neuro-inspired AI
     - title: MSc by Research Biomedical AI
       institution: University of Edinburgh, Edinburgh, United Kingdom
       year: 2022-2023
       description:
         - As part of the UKRI Centre for Doctoral Training (CDT) in Biomedical AI
+        - Distinction
     - title: "MSc Applied Sciences and Engineering: Computer Science"
       institution: Vrije Universiteit Brussel, Brussel, Belgium
       year: 2020-2022
@@ -31,9 +37,10 @@
       year: 2017-2020
       description:
         - Magna Cum Laude (84%)
-    - title: ICT Summer School
+    - title: Summer School
       institution: Xidian University, Xi'an, China
       year: August 2018
+      description: Information & Communication Technologies
 
 - title: Experience
   type: time_table
