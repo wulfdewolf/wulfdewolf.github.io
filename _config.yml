@@ -63,6 +63,7 @@ og_image: # The site-wide (default for all links) Open Graph preview image
 # Social integration
 # -----------------------------------------------------------------------------
 
+strava_userid: 52643941
 github_username: wulfdewolf # your GitHub user name
 gitlab_username: # your GitLab user name
 twitter_username: wolfdewulf # your Twitter handle
