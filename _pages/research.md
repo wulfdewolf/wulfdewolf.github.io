@@ -3,7 +3,7 @@ layout: page
 permalink: /research/
 title: Research
 description:
-categories: [publications,theses]
+categories: [Publications,Theses]
 nav: true
 nav_order: 1
 ---
