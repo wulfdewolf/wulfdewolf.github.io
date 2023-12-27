@@ -461,9 +461,9 @@ footer.sticky-bottom {
 }
 
 
-// Publications
+// Research
 
-.publications {
+.research {
   margin-top: 2rem;
   h1 {
     color: var(--global-theme-color);
@@ -485,6 +485,14 @@ footer.sticky-bottom {
     margin-top: 2rem;
     margin-bottom: -2rem;
     text-align: left;
+  }
+  h2.category {
+    color: var(--global-divider-color);
+    border-bottom: 1px solid var(--global-divider-color);
+    padding-top: 0.5rem;
+    margin-top: 2rem;
+    margin-bottom: 1rem;
+    text-align: right;
   }
   ol.bibliography {
     list-style: none;
