@@ -4,7 +4,7 @@ title: bachelor's thesis
 description: "LP2PB: Translating Answer Set Programs into Pseudo-Boolean Theories"
 img: assets/img/vub.png
 importance: 1
-category: work
+category: academic
 ---
 
 This project was my bachelor's thesis for the degree of BSc in Computer Science, at the [Vrije Universiteit Brussel](https://www.vub.be/en).

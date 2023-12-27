@@ -4,7 +4,7 @@ title: master's thesis
 description: "Transfer learning in Brain-Computer Interfaces: Language-Pretrained Transformers for Classifying Electroencephalography"
 img: assets/img/vub.png
 importance: 1
-category: work
+category: hobbies
 ---
 
 This project was my master's thesis for the degree of MSc in Applied Sciences and Engineering: Computer Science, at the [Vrije Universiteit Brussel](https://www.vub.be/en).

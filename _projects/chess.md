@@ -4,7 +4,7 @@ title: creative chess
 description: Producing Creative Chess through Chess Engine Selfplay
 img: assets/img/chess.png
 importance: 1
-category: fun
+category: hobbies
 ---
 
 This project was originally the assignment for the Computational Creativity course at the [Vrije Universiteit Brussel](https://www.vub.be).

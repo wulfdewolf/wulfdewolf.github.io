@@ -4,7 +4,7 @@ title: Edinburgh Marathon
 description: Staying healthy!
 img: assets/img/marathon.png
 importance: 1
-category: fun
+category: hobbies
 ---
 
 A different kind of project, but important nonetheless.

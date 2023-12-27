@@ -45,12 +45,12 @@
 - title: Experience
   type: time_table
   contents:
-    - title: Developer
-      institution: Vrije Universiteit Brussel, Brussel, Belgium
+    - title: Machine Learning Engineer
+      institution: Artifical Intelligence Lab R&D, Vrije Universiteit Brussel, Brussel, Belgium
       year: August 2021
       description:
-        - Developed a proof-of-concept mobile application for psychologists to manage patients
-        - Machine learning was used to match patients to institutions
+        - Worked on a proof-of-concept mobile application for psychologists to manage patients.
+        - We designed machine learning model to match patients to institutions.
     - title: Store manager
       institution: Elisabeth, Brussels, Belgium
       year: August 2017
@@ -93,4 +93,4 @@
 - title: Other Interests
   type: list
   contents:
-    - <u>Hobbies:</u> Running, Belgian Beer, Whisky
+    - <u>Hobbies:</u> Long distance running, Beer, Bread baking
