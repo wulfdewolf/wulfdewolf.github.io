@@ -3,7 +3,7 @@ layout: page
 title: master's thesis
 description: "Transfer learning in Brain-Computer Interfaces: Language-Pretrained Transformers for Classifying Electroencephalography"
 img: assets/img/vub.png
-importance: 1
+importance: 2
 category: academic
 ---
 

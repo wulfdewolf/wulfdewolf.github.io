@@ -13,13 +13,13 @@ The following are some of my published works and articles. You can also find my 
 <div class="publications" >
     {%- for y in page.categories %}
       <h2 class="year">{{y}}</h2>
-      {% bibliography -f papers -q @*[year={{y}}]* %}
+      {% bibliography -f papers -q @*[category={{y}}]* %}
     {% endfor %}
 
     <h2 class="year">Teaching</h2>
     <ul>
     <li>
-    Tutor & marker. INFR11132 Machine Learning Practical. University of Edinburgh. 2023 Winter.
+    Tutor & marker. Machine Learning & Pattern Recognition. 2023 University of Edinburgh.
     </li>
     </ul>
 </div>
