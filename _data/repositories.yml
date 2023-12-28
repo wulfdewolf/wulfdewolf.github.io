@@ -2,6 +2,8 @@ github_users:
   - wulfdewolf
 
 github_repos:
+  - bryanlimy/sensorium2023
+  - aryopg/biokge
   - wulfdewolf/lpt-for-eeg
   - wulfdewolf/lp2pb
   - wulfdewolf/creative-chess-producer
