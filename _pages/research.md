@@ -16,11 +16,4 @@ You can also find my profile on [Google Scholar](https://scholar.google.com/cita
       <h2 class="category">{{y}}</h2>
       {% bibliography -f papers -q @*[category={{y}}]* %}
     {% endfor %}
-
-    <h2 class="category">Teaching</h2>
-    <ul>
-    <li>
-    Tutor & marker. Machine Learning & Pattern Recognition. 2023 University of Edinburgh.
-    </li>
-    </ul>
 </div>

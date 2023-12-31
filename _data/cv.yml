@@ -57,6 +57,15 @@
       description:
         - Managed a small chocolate/delicacy store in the centre of Brussels
 
+- title: Teaching
+  type: time_table
+  contents:
+    - title: Machine Learning & Pattern Recognition
+      institution: University of Edinburgh
+      year: 2023
+      description:
+        - Tutor & Marker
+
 - title: Community Involvement
   type: time_table
   contents:
