@@ -6,11 +6,6 @@ layout: default
 <div class="post">
 
     <header class="post-header">
-        {% if site.header_path -%}
-        <div style="display: flex; justify-content: center;">
-            <img src="{{ site.header_path }}" style="width:70%; margin-bottom: 20px;">
-        </div>
-        {% endif %}
         <h1 class="post-title">
             {% if site.title == "blank" -%}<span class="font-weight-bold">{{ site.first_name }}</span> {{
             site.middle_name }}
@@ -48,9 +43,14 @@ layout: default
             {{ content }}
         </div>
 
+        <!-- Brain Image -->
+        <div style="display: flex; justify-content: center;">
+            <img src="/assets/img/human_indicated.png" style="width:70%; margin-bottom: 20px;">
+        </div>
+
         <!-- News -->
         {% if page.news -%}
-        <h2><a href="{{ '/news/' | relative_url }}" style="color: inherit;">News</a></h2>
+        <h2>News</h2>
         {%- include news.html %}
         {%- endif %}
 
