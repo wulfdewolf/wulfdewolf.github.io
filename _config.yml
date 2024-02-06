@@ -7,7 +7,6 @@ first_name: Wolf
 middle_name:
 last_name: De Wulf
 email: wolf.de.wulf@ed.ac.uk
-header_path: /assets/img/human_indicated.png
 description: > # the ">" symbol means to ignore newlines until "footer_text:"
   A simple, whitespace theme for academic. Based on [*folio](https://github.com/bogoli/-folio) design.
 keywords: jekyll, jekyll-theme, academic-website, portfolio-website  # add your own keywords or leave empty

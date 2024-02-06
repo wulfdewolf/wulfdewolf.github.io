@@ -31,10 +31,10 @@ I am currently pursuing a PhD in computational neuroscience, jointly supervised 
 We are trying to understand the neural substrate for spatial navigation, which is generally thought to be handled in the hippocampal formation, here circled in a coronal slice of the human brain:
 
 <div style="display: flex; justify-content: center;">
-    <img src="/assets/img/human_indicated.png" style="width:70%; margin-bottom: 20px;">
+    <img src="/assets/img/human_indicated.pdf" style="width:70%; margin-bottom: 20px;">
 </div>
 
-We look specifically at the medial entorhinal cortex (MEC). 
+We look specifically at the medial entorhinal cortex (MEC, above circled in blue). 
 The MEC has traditionally been thought of as containing various types of functionally defined neurons, whose activity correlates with variables such as position, speed, head direction, and more. 
 In recent years, this model of the MEC has been amassing counter-evidence.
 It seems that the activity of MEC neurons is much more heterogeneous than previously thought, with findings of neurons correlated to various mixes of these positional variables and surprising differences across tasks.
