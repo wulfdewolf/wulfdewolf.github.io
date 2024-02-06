@@ -31,7 +31,7 @@ I am currently pursuing a PhD in computational neuroscience, jointly supervised 
 We are trying to understand the neural substrate for spatial navigation, which is generally thought to be handled in the hippocampal formation.
 
 <div style="display: flex; justify-content: center;">
-    <img src="/assets/img/human_vs_brain.png" style="width:70%; margin-bottom: 20px;">
+    <img src="/assets/img/human_vs_brain.png" style="width:90%; margin-bottom: 20px;">
 </div>
 
 We look specifically at the medial entorhinal cortex (MEC).
