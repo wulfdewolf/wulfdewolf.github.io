@@ -28,7 +28,7 @@ On the other, it can yield inspiration towards novel AI models that mimic the br
 At the University of Edinburgh I get to work with researchers from the School of Informatics and from the Centre for Discovery Brain Sciences, resulting in an interdisciplinary approach to research that I genuinely enjoy.
 
 I am currently pursuing a PhD in computational neuroscience, jointly supervised by [Professor Matthias Hennig](https://homepages.inf.ed.ac.uk/mhennig/) and [Professor Matthew Nolan](https://nolanlab.mvm.ed.ac.uk/). 
-We are trying to understand the neural substrate for spatial navigation, which is generally thought to be handled in the hippocampal formation (circled underneath).
+We are trying to understand the neural substrate for spatial navigation, which is generally thought to be handled in the hippocampal formation, here circled in a coronal slice of the human brain:
 
 <div style="display: flex; justify-content: center;">
     <img src="/assets/img/human_indicated.png" style="width:70%; margin-bottom: 20px;">
