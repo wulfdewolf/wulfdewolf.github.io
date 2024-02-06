@@ -42,4 +42,4 @@ These findings suggest that we should re-evaluate the way we think of the neural
 Are functionally discrete neuron types the building blocks of the cognitive map or are they an epiphenomenon of global circuit computation?
 Is it reasonable to link neuron activity to human-intuitive variables such as position and speed?
 Should we stop trying to interpret single neuron activity and look at the population code to understand computation?
-These are a subset of the many questions I am thinking about in this project.
+These are a subset of the many questions I am thinking about in my current project.
