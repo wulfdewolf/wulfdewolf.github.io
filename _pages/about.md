@@ -28,13 +28,13 @@ On the other, it can yield inspiration towards novel AI models that mimic the br
 At the University of Edinburgh I get to work with researchers from the School of Informatics and from the Centre for Discovery Brain Sciences, resulting in an interdisciplinary approach to research that I genuinely enjoy.
 
 I am currently pursuing a PhD in computational neuroscience, jointly supervised by [Professor Matthias Hennig](https://homepages.inf.ed.ac.uk/mhennig/) and [Professor Matthew Nolan](https://nolanlab.mvm.ed.ac.uk/). 
-We are trying to understand the neural substrate for spatial navigation, which is generally thought to be handled in the hippocampal formation, here circled in a coronal slice of the human brain:
+We are trying to understand the neural substrate for spatial navigation, which is generally thought to be handled in the hippocampal formation.
 
 <div style="display: flex; justify-content: center;">
-    <img src="/assets/img/human_indicated.pdf" style="width:70%; margin-bottom: 20px;">
+    <img src="/assets/img/human_vs_brain.png" style="width:70%; margin-bottom: 20px;">
 </div>
 
-We look specifically at the medial entorhinal cortex (MEC, above circled in blue). 
+We look specifically at the medial entorhinal cortex (MEC).
 The MEC has traditionally been thought of as containing various types of functionally defined neurons, whose activity correlates with variables such as position, speed, head direction, and more. 
 In recent years, this model of the MEC has been amassing counter-evidence.
 It seems that the activity of MEC neurons is much more heterogeneous than previously thought, with findings of neurons correlated to various mixes of these positional variables and surprising differences across tasks.
