@@ -7,12 +7,13 @@ first_name: Wolf
 middle_name:
 last_name: De Wulf
 email: wolf.de.wulf@ed.ac.uk
+header_image: /assets/img/human_brain.png
 description: > # the ">" symbol means to ignore newlines until "footer_text:"
   A simple, whitespace theme for academic. Based on [*folio](https://github.com/bogoli/-folio) design.
 keywords: jekyll, jekyll-theme, academic-website, portfolio-website  # add your own keywords or leave empty
 
 lang: en # the language of your site (for example: en, fr, cn, ru, etc.)
-icon: W  # the emoji used as the favicon (alternatively, provide image name in /assets/img/)
+icon: /assets/human_brain.png  # the emoji used as the favicon (alternatively, provide image name in /assets/img/)
 
 url: https://wulfdewolf.github.io # the base hostname & protocol for your site
 baseurl: # the subpath of your site, e.g. /blog/
