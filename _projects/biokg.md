@@ -1,8 +1,8 @@
 ---
 layout: page
-title: biomedical Knowledge Graph Embeddings
+title: biomedical knowledge graph embeddings
 description: "Knowledge Graph Embeddings in the Biomedical Domain: Are They Useful? A Look at Link Prediction, Rule Learning, and Downstream Polypharmacy Tasks"
-img: assets/img/biokg.tiff
+img: assets/img/biokg.png
 importance: 2
 category: academic
 ---
@@ -23,7 +23,7 @@ Depending on the content of the KG, new-found links can help clinical research s
 The article is out as a preprint on [arXiv](https://arxiv.org/abs/2305.19979), and we've submitted it for publication in [Bioinformatics Advances](https://academic.oup.com/bioinformaticsadvances).
 You can take a look at the GitHub repository here:
 <div class="repositories d-flex flex-wrap flex-md-row flex-column justify-content-between align-items-center">
-    {% include repository/repo.html repository="wulfdewolf/creative-chess-producer" %}
+    {% include repository/repo.html repository="aryopg/biokge" %}
 </div>
 
 Supervisors: [Dr. Ajitha Rajan](https://homepages.inf.ed.ac.uk/arajan/), [Dr. Pasquale Minervini](http://www.neuralnoise.com/), [Dr. Antonio Vergari](http://nolovedeeplearning.com/) & [Dr. Javier Alfaro](https://scholar.google.pl/citations?user=ZUfjGcgAAAAJ)
