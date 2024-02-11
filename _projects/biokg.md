@@ -14,9 +14,7 @@ A bit of a hit in the face to see your research idea scooped from under your nos
 so we pushed on a wrote an article about our work.
 
 By embedding these massive KGs in lower dimensions, we can predict links that are missing in the KGs:
-<div class="repositories d-flex flex-wrap flex-md-row flex-column justify-content-between align-items-center">
-    <img src="assets/img/biokg.png">
-</div>
+{% include figure.html path="assets/img/biokge.png" title="biokge" class="img-fluid rounded z-depth-1" %}
 <br/>
 Depending on the content of the KG, new-found links can help clinical research such as drug repurposing or predicting side effects of drug combinations.
 
