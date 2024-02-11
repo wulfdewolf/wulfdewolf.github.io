@@ -3,7 +3,7 @@ layout: page
 title: biomedical knowledge graph embeddings
 description: "Knowledge Graph Embeddings in the Biomedical Domain: Are They Useful? A Look at Link Prediction, Rule Learning, and Downstream Polypharmacy Tasks"
 img: assets/img/biokg.png
-importance: 2
+importance: 4
 category: academic
 ---
 
@@ -18,7 +18,7 @@ By embedding these massive KGs in lower dimensions, we can predict links that ar
 <br/>
 Depending on the content of the KG, new-found links can help clinical research such as drug repurposing or predicting side effects of drug combinations.
 
-The article is out as a preprint on [arXiv](https://arxiv.org/abs/2305.19979), and we've submitted it for publication in [Bioinformatics Advances](https://academic.oup.com/bioinformaticsadvances).
+The article is out as a preprint on [arXiv](https://arxiv.org/abs/2305.19979), and we've submitted it for publication in [Bioinformatics Advances](https://academic.oup.com/bioinformaticsadvances).  
 You can take a look at the GitHub repository here:
 <div class="repositories d-flex flex-wrap flex-md-row flex-column justify-content-between align-items-center">
     {% include repository/repo.html repository="aryopg/biokge" %}
