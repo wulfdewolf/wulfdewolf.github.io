@@ -38,8 +38,10 @@ We look specifically at the medial entorhinal cortex (MEC).
 The MEC has traditionally been thought of as containing various types of functionally defined neurons, whose activity correlates with variables such as position, speed, head direction, and more. 
 In recent years, this model of the MEC has been amassing counter-evidence.
 It seems that the activity of MEC neurons is much more heterogeneous than previously thought, with findings of neurons correlated to various mixes of these positional variables and surprising differences across tasks.
-These findings suggest that we should re-evaluate the way we think of the neural spatial code in the MEC.
-Are functionally discrete neuron types the building blocks of the cognitive map or are they an epiphenomenon of global circuit computation?
-Is it reasonable to link neuron activity to human-intuitive variables such as position and speed?
-Should we stop trying to interpret single neuron activity and look at the population code to understand computation?
-These are a subset of the many questions I am thinking about in my current project.
+These findings suggest that we should re-evaluate the way we think of the neural spatial code in the MEC:
+- Are functionally discrete neuron types the building blocks of the cognitive map?
+- Are they an epiphenomenon of global circuit computation?
+- Is it reasonable to link neuron activity to human-intuitive variables such as position and speed?
+- Should we stop trying to interpret single neuron activity and look at the population code to understand computation?
+
+These are just a subset of the many questions I am thinking about in my current project.
