@@ -2,7 +2,7 @@
 layout: page
 title: Running
 description: Staying sane...
-img: assets/img/running.png
+img: assets/img/running.jpg
 importance: 1
 category: hobbies
 ---
@@ -21,20 +21,20 @@ The way I am training at the moment, I think both are very feasible.
 I'm running around 50km a week, with 7 to 10km pace runs on Thuesday & Friday, intervals or fartleks on Wednesday, and 20-30km long runs on Sunday.
 The Mondays & Saturdays I either do yoga or strength training.
 
-Proof:
-<div class="row justify-content-sm-center">
-    <div class="col-sm-6 mt-3 mt-md-0">
-        <iframe height='454' width='300' frameborder='0' allowtransparency='true' scrolling='no' src='https://www.strava.com/athletes/52643941/latest-rides/7ccedcd4ff10fad952d30569caf7c9554d5cbb0f'></iframe>
+<div style="display: flex; justify-content: space-between;">
+    <div style="width: 45%;">
+        <p>The current agenda in terms of races is:</p>
+        <ul>
+            <li>18/02/2024: <a href="https://www.highterrainevents.co.uk/glentress-trail-races">Glentress half marathon</a> trail run</li>
+            <li>03/03/2024: <a href="https://www.meadowsmarathon.org.uk/">Meadows Half-Marathon</a></li>
+            <li>04/05/2024: <a href="https://www.meadowsmarathon.org.uk/">Edinburgh to North Berwick 30k</a></li>
+            <li>26/05/2024: <a href="https://www.edinburghmarathon.com/marathon">Edinburgh Marathon</a></li>
+        </ul>
     </div>
-    <div class="col-sm-6 mt-3 mt-md-0">
-        <iframe height='160' width='300' frameborder='0' allowtransparency='true' scrolling='no' src='https://www.strava.com/athletes/52643941/activity-summary/7ccedcd4ff10fad952d30569caf7c9554d5cbb0f'></iframe>
+    <div style="width: 45%;">
+        <iframe height='454' width='100%' frameborder='0' allowtransparency='true' scrolling='no' src='https://www.strava.com/athletes/52643941/latest-rides/7ccedcd4ff10fad952d30569caf7c9554d5cbb0f'></iframe>
+        <iframe height='160' width='100%' frameborder='0' allowtransparency='true' scrolling='no' src='https://www.strava.com/athletes/52643941/activity-summary/7ccedcd4ff10fad952d30569caf7c9554d5cbb0f'></iframe>
     </div>
 </div>
-
-The current agenda in terms of races is:
-1. The [Glentress half marathon](https://www.highterrainevents.co.uk/glentress-trail-races) trail run, 18/02/2024
-2. The [Meadows Half-Marathon](https://www.meadowsmarathon.org.uk/), 03/03/2024
-3. The [Edinburgh to Norht Berwick 30k](https://www.meadowsmarathon.org.uk/), 04/05/2024
-4. The [Edinburgh Marathon](https://www.edinburghmarathon.com/marathon), 26/05/2024
 
 I also really want to do the [Seven Hills of Edinburgh](http://www.seven-hills.org.uk/) run at some point, but I can't make it this year as I'll be in New York for an internship over the summer.
