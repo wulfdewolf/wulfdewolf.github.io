@@ -15,7 +15,7 @@ so we pushed on a wrote an article about our work.
 
 By embedding these massive KGs in lower dimensions, we can predict links that are missing in the KGs:
 <div class="repositories d-flex flex-wrap flex-md-row flex-column justify-content-between align-items-center">
-    {% include repository/repo.html repository="wulfdewolf/lpt-for-eeg" %}
+    <img src="assets/img/biokg.png">
 </div>
 <br/>
 Depending on the content of the KG, new-found links can help clinical research such as drug repurposing or predicting side effects of drug combinations.
@@ -25,5 +25,5 @@ You can take a look at the GitHub repository here:
 <div class="repositories d-flex flex-wrap flex-md-row flex-column justify-content-between align-items-center">
     {% include repository/repo.html repository="aryopg/biokge" %}
 </div>
-
+<br/>
 Supervisors: [Dr. Ajitha Rajan](https://homepages.inf.ed.ac.uk/arajan/), [Dr. Pasquale Minervini](http://www.neuralnoise.com/), [Dr. Antonio Vergari](http://nolovedeeplearning.com/) & [Dr. Javier Alfaro](https://scholar.google.pl/citations?user=ZUfjGcgAAAAJ)

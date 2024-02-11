@@ -24,6 +24,8 @@ The Mondays & Saturdays I either do yoga or strength training.
 <div style="display: flex; justify-content: space-between;">
     <div style="width: 45%;">
         <iframe height='160' width='100%' frameborder='0' allowtransparency='true' scrolling='no' src='https://www.strava.com/athletes/52643941/activity-summary/7ccedcd4ff10fad952d30569caf7c9554d5cbb0f'></iframe>
+        <br/>
+        <br/>
         <p>The current agenda in terms of races is:</p>
         <ul>
             <li>18/02/2024: <a href="https://www.highterrainevents.co.uk/glentress-trail-races">Glentress half marathon</a></li>
