@@ -24,7 +24,7 @@ Mondays & Saturdays I either do yoga or strength training.
 I keep track of everything on Strava:
 
 <div style="display: flex; justify-content: center;">
-    <iframe height='160' width='50%' frameborder='0' allowtransparency='true' scrolling='no' src='https://www.strava.com/athletes/52643941/activity-summary/7ccedcd4ff10fad952d30569caf7c9554d5cbb0f'></iframe>
+    <iframe height='160' width='80%' frameborder='0' allowtransparency='true' scrolling='no' src='https://www.strava.com/athletes/52643941/activity-summary/7ccedcd4ff10fad952d30569caf7c9554d5cbb0f'></iframe>
 </div>
 <br/>
 
