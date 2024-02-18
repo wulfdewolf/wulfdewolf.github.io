@@ -21,7 +21,7 @@ The way I am training at the moment, I think both are very feasible.
 I'm running around 50km a week, with 7 to 10km pace runs on Thuesday & Friday, intervals or fartleks on Wednesday, and 20-30km long runs on Sunday.
 The Mondays & Saturdays I either do yoga or strength training.
 
-<div style="display: flex; justify-content: space-between;">
+<div style="display: flex; justify-content: center; align-items: center;">
     <div style="width: 70%;">
         <iframe height='160' width='100%' frameborder='0' allowtransparency='true' scrolling='no' src='https://www.strava.com/athletes/52643941/activity-summary/7ccedcd4ff10fad952d30569caf7c9554d5cbb0f'></iframe>
         <br/>
@@ -30,7 +30,7 @@ The Mondays & Saturdays I either do yoga or strength training.
         <ul>
             <li>18/02/2024: <a href="https://www.highterrainevents.co.uk/glentress-trail-races">Glentress half marathon ✅</a>
                 <div class="strava-embed-placeholder" data-embed-type="activity" data-embed-id="10786361993" data-style="standard"></div><script src="https://strava-embeds.com/embed.js"></script>
-            </li>
+            </li><br/>
             <li>03/03/2024: <a href="https://www.meadowsmarathon.org.uk/">Meadows Half-Marathon</a></li>
             <li>04/05/2024: <a href="https://www.meadowsmarathon.org.uk/">Edinburgh-North Berwick 30k</a></li>
             <li>26/05/2024: <a href="https://www.edinburghmarathon.com/marathon">Edinburgh Marathon</a></li>
