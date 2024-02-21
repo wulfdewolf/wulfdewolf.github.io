@@ -52,6 +52,7 @@ I also really want to do the [Seven Hills of Edinburgh](http://www.seven-hills.o
     }
     .run-image > div, .run-image > img {
         width: 40%;
+        margin: 1em;
     }
     @media (max-width: 600px) {
         .run-image {
