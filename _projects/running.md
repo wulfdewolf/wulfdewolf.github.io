@@ -34,7 +34,7 @@ I keep track of everything on Strava:
     <div style="display: flex; align-items: center;">
         <div class="strava-embed-placeholder" style="width: 45%;" data-embed-type="activity" data-embed-id="10786361993" data-style="standard"></div>
         <script src="https://strava-embeds.com/embed.js"></script>
-        <img src="assets/img/running_cropped.jpg" alt="Me running" style="width: 45%;">
+        <img src="/assets/img/running_cropped.jpg" alt="Me running" style="width: 45%;">
     </div>
     </li><br/>
     <li>03/03/2024: <a href="https://www.meadowsmarathon.org.uk/">Meadows Half-Marathon</a></li>
