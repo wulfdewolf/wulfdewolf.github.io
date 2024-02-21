@@ -31,10 +31,10 @@ I keep track of everything on Strava:
 <p>My current agenda in terms of races is:</p>
 <ul>
     <li>18/02/2024: <a href="https://www.highterrainevents.co.uk/glentress-trail-races">Glentress half marathon ✅</a>  
-    <div style="display: flex; align-items: center;">
-        <div class="strava-embed-placeholder" style="width: 45%;" data-embed-type="activity" data-embed-id="10786361993" data-style="standard"></div>
+    <div class="run-image">
+        <div class="strava-embed-placeholder" data-embed-type="activity" data-embed-id="10786361993" data-style="standard"></div>
         <script src="https://strava-embeds.com/embed.js"></script>
-        <img src="/assets/img/running_cropped.jpg" alt="Me running" style="width: 45%;">
+        <img src="/assets/img/running_cropped.jpg" alt="Me running">
     </div>
     </li><br/>
     <li>03/03/2024: <a href="https://www.meadowsmarathon.org.uk/">Meadows Half-Marathon</a></li>
@@ -43,3 +43,22 @@ I keep track of everything on Strava:
 </ul>
 
 I also really want to do the [Seven Hills of Edinburgh](http://www.seven-hills.org.uk/) run at some point, but I can't make it this year as I'll be in New York for an internship over the summer.
+
+<style>
+    .run-image {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+    .run-image > div, .run-image > img {
+        width: 40%;
+    }
+    @media (max-width: 600px) {
+        .run-image {
+            flex-direction: column;
+        }
+        .run-image > div, .run-image > img {
+            width: 100%;
+        }
+    }
+</style>
