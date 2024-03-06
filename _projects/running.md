@@ -28,7 +28,7 @@ I keep track of everything on Strava:
 </div>
 <br/>
 
-<p>My current agenda in terms of races is:</p>
+<p>Potential races on the agenda are:</p>
 <ul>
     <li>18/02/2024: <a href="https://www.highterrainevents.co.uk/glentress-trail-races">Glentress half marathon ✅</a>  
     <div class="run-image">
@@ -37,8 +37,10 @@ I keep track of everything on Strava:
         <img src="/assets/img/running_cropped.jpg" alt="Me running">
     </div>
     </li><br/>
-    <li>03/03/2024: <a href="https://www.meadowsmarathon.org.uk/">Meadows Half-Marathon</a></li>
-    <li>04/05/2024: <a href="https://www.meadowsmarathon.org.uk/">Edinburgh-North Berwick 30k</a></li>
+    <li>03/03/2024: <a href="https://www.meadowsmarathon.org.uk/">Meadows Half-Marathon ❌</a>
+    Missed registration, but it's fine I've ran enough loops of the meadows!</li>
+    <li>04/05/2024: <a href="https://e2nb-org-uk.translate.goog/?_x_tr_sl=en&_x_tr_tl=nl&_x_tr_hl=nl&_x_tr_pto=sc">Edinburgh-North Berwick 30k</a>
+    I doubt I'll do this one, nothing really fun about it, I'll be running 30ks along the canal around that time anyways.</li>
     <li>26/05/2024: <a href="https://www.edinburghmarathon.com/marathon">Edinburgh Marathon</a></li>
 </ul>
 
