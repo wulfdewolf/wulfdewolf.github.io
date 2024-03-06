@@ -38,9 +38,9 @@ I keep track of everything on Strava:
     </div>
     </li><br/>
     <li>03/03/2024: <a href="https://www.meadowsmarathon.org.uk/">Meadows Half-Marathon ❌</a>
-    Missed registration, but it's fine I've ran enough loops of the meadows!</li>
+    <br>Missed registration, but it's fine I've ran enough loops around the meadows!</li>
     <li>04/05/2024: <a href="https://e2nb-org-uk.translate.goog/?_x_tr_sl=en&_x_tr_tl=nl&_x_tr_hl=nl&_x_tr_pto=sc">Edinburgh-North Berwick 30k</a>
-    I doubt I'll do this one, nothing really fun about it, I'll be running 30ks along the canal around that time anyways.</li>
+    <br>I doubt I'll do this one, nothing really fun about it, I'll be running 30ks along the canal around that time anyways.</li>
     <li>26/05/2024: <a href="https://www.edinburghmarathon.com/marathon">Edinburgh Marathon</a></li>
 </ul>
 
