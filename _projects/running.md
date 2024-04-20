@@ -7,20 +7,7 @@ importance: 1
 category: hobbies
 ---
 
-Yes, I'm one of those...
-I love it, it's the only thing that allows me to stop thinking.
-With my mind constantly engaged trying to get further in my PhD it feels amazing to just turn everything off for a while everyday.
-
-Since moving to Edinburgh I've been taking it much more seriously, upping the distances I run.
-I ran the [Edinburgh Marathon](https://www.edinburghmarathon.com/) the first year I got here and intend to run it every year.  
-Since then, I've set two goals for myself to achieve before I move away from the UK:
-- Run a 3h30min marathon.
-- Run the [Loch Ness marathon](https://lochnessmarathon.com/).
-
-The way I am training at the moment, I think both are very feasible.
-I'm running between 30 and 50 km every week, with 7 to 10km pace runs on Tuesday & Friday, intervals or fartleks on Wednesday, and 20-30km long runs on Sunday.
-Mondays & Saturdays I either do yoga or strength training.
-
+I run a lot. 
 I keep track of everything on Strava:
 
 <div style="display: flex; justify-content: center;">
