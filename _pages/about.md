@@ -27,7 +27,7 @@ On the one hand, understanding the neural codes behind a particular behaviour fa
 On the other, it can yield inspiration towards novel AI models that mimic the brain.
 
 I am currently pursuing a PhD in computational neuroscience, jointly supervised by [Matthias Hennig](https://homepages.inf.ed.ac.uk/mhennig/) and [Matthew Nolan](https://nolanlab.mvm.ed.ac.uk/). 
-We are trying to understand spatial memory and computation, which is thought to originate the hippocampal formation.
+We are trying to understand spatial memory and computation in the hippocampal formation.
 We analyse electrophysiological recordings from mice as a substitute for humans:
 
 <div style="display: flex; justify-content: center;">

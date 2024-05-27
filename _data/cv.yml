@@ -96,15 +96,18 @@
   contents:
     - title: Neuroscience
       items:
-        - Hippocampus
         - Medial Entorhinal Cortex
-        - Spatial coding
-    - title: Computational Neuroscience
+        - Hippocampus
+        - Spatial memory/computation
+        - Mixed selectivity
+    - title: NeuroAI
       items: 
         - Dimensionality Reduction
+        - Low-dimensional Manifolds
         - Latent Variable Models
-
+        - Foundation models of neural activity
 - title: Other Interests
   type: list
   contents:
-    - <u>Hobbies:</u> Long distance running, Beer, Bread baking
+    - <u>Hobbies:</u> running, beer, 
+    - <u>Reading:</u> Sci-Fi (Asimov, Frank & Brian Herbert), High Fantasy (Robin Hobb, Robert Jordan, Steven Erikson)
