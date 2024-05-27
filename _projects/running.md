@@ -7,7 +7,10 @@ importance: 1
 category: hobbies
 ---
 
-It's a great distraction from work. and it's healthy. and enables you to eat as much as you want (so much...). 10/10 recommend.
+It's a great distraction from work.  
+and it's healthy.  
+and enables you to eat as much as you want (so much...).  
+10/10 recommend.  
 Follow me on Strava:
 
 <div style="display: flex; justify-content: center;">
@@ -17,26 +20,31 @@ Follow me on Strava:
 
 <p>Events I ran:</p>
 <ul>
-    <li>29/05/2023: <a href="https://www.edinburghmarathon.com/marathon">Edinburgh Marathon</a></li>
+    <li>29/05/2023: <a href="https://www.edinburghmarathon.com/marathon">Edinburgh Marathon</a>
     <div class="run-image">
-    <div class="strava-embed-placeholder" data-embed-type="activity" data-embed-id="9156887022" data-style="standard"></div>
+        <div class="strava-embed-placeholder" data-embed-type="activity" data-embed-id="9156887022" data-style="standard"></div>
         <script src="https://strava-embeds.com/embed.js"></script>
-    <li>24/09/2024: <a href="https://www.edinburghmarathon.com/marathon">Scottish Half Marathon</a></li>
+    </div>
+    </li><br/>
+    <li>24/09/2024: <a href="https://www.edinburghmarathon.com/marathon">Scottish Half Marathon</a>
     <div class="run-image">
-    <div class="strava-embed-placeholder" data-embed-type="activity" data-embed-id="9910748009" data-style="standard"></div>
-    <script src="https://strava-embeds.com/embed.js"></script>
-    <li>18/02/2024: <a href="https://www.highterrainevents.co.uk/glentress-trail-races">Glentress half marathon ✅</a>  
+        <div class="strava-embed-placeholder" data-embed-type="activity" data-embed-id="9910748009" data-style="standard"></div>
+        <script src="https://strava-embeds.com/embed.js"></script>
+    </div>
+    </li><br/>
+    <li>18/02/2024: <a href="https://www.highterrainevents.co.uk/glentress-trail-races">Glentress Half Marathon Trail Run</a>  
     <div class="run-image">
         <div class="strava-embed-placeholder" data-embed-type="activity" data-embed-id="10786361993" data-style="standard"></div>
         <script src="https://strava-embeds.com/embed.js"></script>
         <img src="/assets/img/running_cropped.jpg" alt="Me running">
     </div>
     </li><br/>
-    <li>26/05/2024: <a href="https://www.edinburghmarathon.com/marathon">Edinburgh Marathon</a></li>
+    <li>26/05/2024: <a href="https://www.edinburghmarathon.com/marathon">Edinburgh Marathon</a>
     <div class="run-image">
-    <div class="strava-embed-placeholder" data-embed-type="activity" data-embed-id="11501567305" data-style="standard"></div>
+        <div class="strava-embed-placeholder" data-embed-type="activity" data-embed-id="11501567305" data-style="standard"></div>
         <script src="https://strava-embeds.com/embed.js"></script>
     </div>
+    </li><br/>
 </ul>
 
 <style>
