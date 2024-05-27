@@ -26,7 +26,7 @@ Follow me on Strava:
         <script src="https://strava-embeds.com/embed.js"></script>
     </div>
     </li><br/>
-    <li>24/09/2024: <a href="https://www.edinburghmarathon.com/marathon">Scottish Half Marathon</a>
+    <li>24/09/2024: <a href="https://www.scottishhalfmarathon.com/half">Scottish Half Marathon</a>
     <div class="run-image">
         <div class="strava-embed-placeholder" data-embed-type="activity" data-embed-id="9910748009" data-style="standard"></div>
         <script src="https://strava-embeds.com/embed.js"></script>
