@@ -27,14 +27,7 @@ On the one hand, understanding the neural codes behind a particular behaviour fa
 On the other, it can yield inspiration towards novel AI models that mimic the brain.
 
 I am currently pursuing a PhD in computational neuroscience, jointly supervised by [Matthias Hennig](https://homepages.inf.ed.ac.uk/mhennig/) and [Matthew Nolan](https://nolanlab.mvm.ed.ac.uk/). 
-We are trying to understand spatial memory and computation in the hippocampal formation.
-We analyse electrophysiological recordings from mice as a substitute for humans:
-
-<div style="display: flex; justify-content: center;">
-    <img src="/assets/img/human_vs_brain.png" style="width:90%; margin-bottom: 20px;">
-</div>
-
-We look specifically at the medial entorhinal cortex (MEC).
+We are trying to understand spatial memory and computation in the medial entorhinal cortex (MEC).
 The MEC has traditionally been thought of as containing various types of functionally defined neurons, whose activity correlates with variables such as position, speed, head direction, and more [(Moser et al., 2015)](https://cshperspectives.cshlp.org/content/7/2/a021808). 
 In recent years, this model of the MEC has been amassing counter-evidence.
 It seems that the activity of MEC neurons is much more heterogeneous than previously thought, with findings of neurons correlated to various mixes of these positional variables and surprising differences across tasks [(Hardcastle et al., 2017)](https://www.nature.com/articles/nn.4654).
