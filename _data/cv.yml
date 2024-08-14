@@ -6,14 +6,14 @@
     - name: Date of Birth
       value: 23rd March 1999
     - name: Languages
-      value: Flemish, French, English
+      value: Dutch (native), English (C1), French (C1)
 
 - title: Education
   type: time_table
   contents:
-    - title: PhD Biomedical AI
+    - title: PhD Computational Neuroscience
       institution: University of Edinburgh, Edinburgh, United Kingdom
-      year: 2023 - 2026
+      year: 2023 - ...
       description:
         - As part of the UKRI Centre for Doctoral Training (CDT) in Biomedical AI
     - title: MSc by Research Biomedical AI
@@ -22,39 +22,47 @@
       description:
         - As part of the UKRI Centre for Doctoral Training (CDT) in Biomedical AI
         - Distinction
-    - title: "MSc Applied Sciences and Engineering: Computer Science"
+    - title: "MSc Applied Sciences and Engineering: Computer Science" (93%)
       institution: Vrije Universiteit Brussel, Brussel, Belgium
       year: 2020-2022
-      description:
-        - Summa Cum Laude (93%)
     - title: BSc Computer Science
-      institution: Vrije Universiteit Brussel, Brussel, Belgium
+      institution: Vrije Universiteit Brussel, Brussel, Belgium (84%)
       year: 2017-2020
-      description:
-        - Magna Cum Laude (84%)
 
-- title: Training & Schools
+- title: Experience
   type: time_table
   contents:
+    - title: NeuroAI Intern
+      institution: Cold Spring Harbor Laboratory, New York, USA
+      year: Summer 2024
+      description:
+        - Predictive coding the Olfactory Cortex, Albeanu Lab
     - title: Autumn School 
       institution: Ulster University, Derry, United Kingdom
       year: October 2023
       description:
         - Computational Neuroscience, Neurotechnology and Neuro-inspired AI
-    - title: Summer School
-      institution: Xidian University, Xi'an, China
-      year: August 2018
-      description: Information & Communication Technologies
-
-- title: Experience
-  type: time_table
-  contents:
+    - title: MScR Thesis
+      institution: University of Edinburgh, Edinburgh, United Kingdom
+      year: 2023
+      description: "Transformer-Based EMG Decoding for Control of Prosthetic Fingers"
+    - title: MSc Thesis
+      institution: Vrije Universieit Brussel, Brussel, Belgium
+      year: 2022
+      description: "Transfer learning in BCIs: Pretrained Transformers for Classifying EEG"
     - title: Machine Learning Engineer
       institution: Artifical Intelligence Lab R&D, Vrije Universiteit Brussel, Brussel, Belgium
       year: August 2021
       description:
-        - Worked on a proof-of-concept mobile application for psychologists to manage patients.
-        - We designed machine learning model to match patients to institutions.
+        - "Developed an ML app to match patients to psychologists. Contact: Prof. Johan Loeckx"
+    - title: BSc Thesis
+      institution: Vrije Universieit Brussel, Brussel, Belgium
+      year: 2020
+      description: "LP2PB: Translating Answer Set Programs into Pseudo-Boolean Theories"
+    - title: Summer School
+      institution: Xidian University, Xi'an, China
+      year: August 2018
+      description: Information & Communication Technologies
     - title: Store manager
       institution: Elisabeth, Brussels, Belgium
       year: August 2017
@@ -65,7 +73,7 @@
   type: time_table
   contents:
     - title: Machine Learning & Pattern Recognition
-      institution: University of Edinburgh
+      institution: University of Edinburgh, Edinburgh, United Kingdom
       year: 2023
       description:
         - Tutor
@@ -83,7 +91,7 @@
         - Comission student affairs
         - Education comission
 
-- title: Honors and Awards
+- title: Awards
   type: time_table
   contents:
     - year: 2022
@@ -91,7 +99,7 @@
         - Vrije Universiteit Brussel Prize of Science
         - BrEA Student Engineering Prize
 
-- title: Academic Interests
+- title: Research Interests
   type: nested_list
   contents:
     - title: Neuroscience
@@ -102,11 +110,13 @@
         - Mixed selectivity
     - title: NeuroAI
       items: 
-        - Dimensionality Reduction
-        - Low-dimensional Manifolds
+        - Dimensionality reduction
+        - Low-dimensional manifolds
         - Latent Variable Models
         - Foundation models of neural activity
-- title: Other Interests
+- title: Hobbies
   type: list
   contents:
-    - <u>Hobbies:</u> running, beer, reading (Sci-Fi, High Fantasy) 
+    - running
+    - beer
+    - reading (Sci-Fi, High Fantasy) 
