@@ -15,18 +15,17 @@
       institution: University of Edinburgh, United Kingdom
       year: 2023 - ...
       description:
-        - As part of the UKRI Centre for Doctoral Training (CDT) in Biomedical AI
-    - title: MScR Biomedical AI
+        - As part of the UKRI Centre for Doctoral Training (CDT) in Biomedical AI 
+    - title: MScR Biomedical AI (distinction)
       institution: University of Edinburgh, United Kingdom
       year: 2022-2023
       description:
         - As part of the UKRI Centre for Doctoral Training (CDT) in Biomedical AI
-        - Distinction
     - title: "MSc Applied Sciences and Engineering: Computer Science (93%)"
       institution: Vrije Universiteit Brussel, Belgium
       year: 2020-2022
-    - title: BSc Computer Science
-      institution: Vrije Universiteit Brussel, Belgium (84%)
+    - title: BSc Computer Science (84%)
+      institution: Vrije Universiteit Brussel, Belgium
       year: 2017-2020
 
 - title: Experience
@@ -72,7 +71,7 @@
   contents:
     - title: Machine Learning & Pattern Recognition
       institution: University of Edinburgh, United Kingdom
-      year: 2023,2024
+      year: "2023,2024"
       description:
         - Tutor & Marker
 
