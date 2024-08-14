@@ -71,17 +71,16 @@
   type: time_table
   contents:
     - title: Machine Learning & Pattern Recognition
-      institution: University of Edinburgh, Edinburgh, United Kingdom
-      year: 2023
+      institution: University of Edinburgh, United Kingdom
+      year: 2023,2024
       description:
-        - Tutor
-        - Marker
+        - Tutor & Marker
 
 - title: Community Involvement
   type: time_table
   contents:
-    - title: Student representative
-      institution: Vrije Universiteit Brussel, Brussel, Belgium
+    - title: Student Representative
+      institution: Vrije Universiteit Brussel, Belgium
       year: 2018-2022
       description:
         - BSc Computer Science programme council
