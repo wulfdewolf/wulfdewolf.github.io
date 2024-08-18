@@ -35,7 +35,7 @@
       institution: Cold Spring Harbor Laboratory, USA
       year: Summer 2024
       description:
-        - Predictive coding the Olfactory Cortex, Albeanu Lab
+        - Predictive Coding in the Olfactory Cortex, Albeanu Lab
     - title: "Autumn School: Computational Neuroscience & NeuroAI"
       institution: Ulster University, United Kingdom
       year: October 2023
@@ -100,16 +100,16 @@
   contents:
     - title: Neuroscience
       items:
-        - Medial Entorhinal Cortex
-        - Hippocampus
-        - Spatial memory/computation
-        - Mixed selectivity
+        - entorhinal cortex - hippocampus system
+        - spatial memory & computation
+        - grid / place / speed / ... cells
+        - mixed selectivity
+        - predictive coding
     - title: NeuroAI
       items: 
-        - Dimensionality reduction
-        - Low-dimensional manifolds
-        - Latent Variable Models
-        - Foundation models of neural activity
+        - latent variable models
+        - active inference
+        - foundation models of neural activity
 - title: Hobbies
   type: list
   contents:
