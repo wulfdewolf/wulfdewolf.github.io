@@ -45,6 +45,33 @@ Follow me on Strava:
         <script src="https://strava-embeds.com/embed.js"></script>
     </div>
     </li><br/>
+    <li>13/10/2024: <a href="https://carnethy.com/carnethy-organised-races/skyloop/">Pentlands Skyloop</a>
+    <div class="run-image">
+        <div class="strava-embed-placeholder" data-embed-type="activity" data-embed-id="12645967375" data-style="standard"></div>
+        <script src="https://strava-embeds.com/embed.js"></script>
+        <div id="imageCarousel" class="carousel slide" data-ride="carousel">
+            <div class="carousel-inner">
+                <div class="carousel-item active">
+                    <img src="/assets/img/skyloop_cropped.jpg" class="d-block w-100" alt="Me at the Pentlands Skyloop start line.">
+                </div>
+                <div class="carousel-item">
+                    <img src="/assets/img/pentlands.jpg" class="d-block w-100" alt="The Pentlands.">
+                </div>
+                <div class="carousel-item">
+                    <img src="/assets/img/cow.jpg" class="d-block w-100" alt="A Scottish cow in the Pentlands.">
+                </div>
+            </div>
+            <a class="carousel-control-prev" href="#imageCarousel" role="button" data-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="sr-only">Previous</span>
+            </a>
+            <a class="carousel-control-next" href="#imageCarousel" role="button" data-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="sr-only">Next</span>
+            </a>
+        </div>
+    </div>
+    </li><br/>
 </ul>
 
 <style>
