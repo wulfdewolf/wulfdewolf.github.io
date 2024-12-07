@@ -148,15 +148,16 @@ html {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    gap: 20px;
-    width: 90%;
-    max-width: 600px;
+    gap: 15px;
+    max-width: 95%;
 }
 
 .social-icons i {
     color: white;
     transition: transform 0.3s ease, color 0.3s ease;
-    font-size: 2.5rem;
+    font-size: 5vh; /* Use viewport width units to scale the font size */
+    width: 100%;
+    height: auto; /* Maintain aspect ratio */
 }
 
 .social-icons i:hover {
