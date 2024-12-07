@@ -25,8 +25,8 @@
 <body>
 
     <!-- Background Video -->
-    <video class="background-video" autoplay loop muted playsinline>
-        <source src="assets/background.mp4" type="video/mp4">
+    <video class="background-video" autoplay loop muted playsinline loading="lazy">
+        <source id="videoSource" type="video/mp4">
         Your browser does not support the video tag.
     </video>
 
@@ -81,6 +81,16 @@
                 <i class="ai ai-cv"></i>
             </a>
         </div>
+    </div>
+    <!-- Information Icon and Box -->
+    <i class="fas fa-info-circle info-icon" onclick="toggleInfoBox()"></i>
+    <div class="info-box" id="infoBox">
+        What you are seeing here is a simulation of a lab animal (typically a rodent like a mouse or a rat) exploring a two-dimensional environment.
+        The appearing coloured dots represent the spikes of a grid cell in the medial entorhinal cortex of the
+        artificial animal.<br>
+        I generated this simulation using the amazing <a href="https://github.com/RatInABox-Lab/RatInABox"
+            target="_blank">RatInABox</a> package by <a href="https://elifesciences.org/articles/85274"
+            target="_blank">George et al (2024)</a>.
     </div>
 
     <!-- BOTTOM BUTTON -->
@@ -171,11 +181,28 @@
     </div>
 
     <script>
+        // List of video file names
+        const videos = [
+            'assets/grid_1.mp4',
+            'assets/grid_2.mp4',
+            'assets/grid_3.mp4',
+            'assets/grid_4.mp4',
+            'assets/grid_5.mp4',
+            'assets/grid_6.mp4',
+            'assets/grid_7.mp4',
+            'assets/grid_8.mp4',
+            'assets/grid_9.mp4',
+        ];
+        // Randomly select a video
+        const randomVideo = videos[Math.floor(Math.random() * videos.length)];
+        document.getElementById('videoSource').src = randomVideo;
+
         // Function to toggle the top panel and the infoTitle button
         const infoTitle = document.getElementById('infoTitle');
         function toggleTopPanel() {
             const panel = document.getElementById('topPanel');
             const infoTitle = document.getElementById('infoTitle'); // Select the infoTitle button
+            const infoBox = document.getElementById('infoBox'); // Select the infoBox
 
             if (panel.classList.contains('show-panel-top')) {
                 // Hide the top panel
@@ -197,11 +224,16 @@
                 infoTitle.classList.remove('show-info-title');
                 infoTitle.classList.add('hide-info-title');
             }
+            // Close the info box if it is open
+            if (infoBox.classList.contains('active')) {
+                infoBox.classList.remove('active');
+            }
         }
 
         function toggleBotPanel() {
             const newPanel = document.getElementById('botPanel');
             const title = document.querySelector('.title');
+            const infoBox = document.getElementById('infoBox'); // Select the infoBox
             title.classList.toggle('hidden');
             if (newPanel.style.display === 'flex') {
                 newPanel.classList.add('hide-panel-bot');
@@ -213,9 +245,17 @@
                 newPanel.classList.remove('hide-panel-bot');
                 newPanel.classList.add('show-panel-bot');
             }
+            // Close the info box if it is open
+            if (infoBox.classList.contains('active')) {
+                infoBox.classList.remove('active');
+            }
+        }
+        // Toggle info box visibility
+        function toggleInfoBox() {
+            const infoBox = document.getElementById('infoBox');
+            infoBox.classList.toggle('active');
         }
     </script>
-
 </body>
 
 </html>
