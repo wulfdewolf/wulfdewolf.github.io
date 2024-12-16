@@ -15,28 +15,19 @@ html {
 /* Background Video Styling */
 .background-video {
     position: fixed;
-    width: auto;
-    height: 100%;
-    min-width: 100%;
-    min-height: 100%;
-    /* Centers the video */
+    top: 50%;
+    left: 50%;
+    width: 50%;
     object-fit: cover;
+    transform: translate(-50%, -50%);
     z-index: -1;
 }
 
 @media (orientation: portrait) {
     .background-video {
         position: fixed;
-        width: 100vh;
-        /* Match the width to the viewport height */
-        height: 100vw;
-        /* Match the height to the viewport width */
-        left: 50%;
-        top: 50%;
-        transform: translate(-50%, -50%) rotate(90deg);
-        /* Center and rotate */
-        object-fit: contain;
-        /* Scale the video within the screen bounds */
+        width: 100%;
+        object-fit: cover;
         z-index: -1;
     }
 }
@@ -352,7 +343,7 @@ html {
     position: fixed;
     bottom: 60px; /* Adjusted to be higher than the projects button */
     left: 20px;
-    width: 200px;
+    width: 300px;
     padding: 10px;
     background-color: rgba(0, 0, 0, 0.7); /* Slightly see-through */
     color: white;

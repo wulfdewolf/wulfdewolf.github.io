@@ -85,10 +85,10 @@
     <!-- Information Icon and Box -->
     <i class="fas fa-info-circle info-icon" onclick="toggleInfoBox()"></i>
     <div class="info-box" id="infoBox">
-        What you are seeing here is a simulation of a lab animal (typically a rodent like a mouse or a rat) exploring a two-dimensional environment.
-        The appearing coloured dots represent the spikes of a grid cell in the medial entorhinal cortex of the
-        artificial animal.<br>
-        I generated this simulation using the amazing <a href="https://github.com/RatInABox-Lab/RatInABox"
+        What you are seeing here is a visualisation of one of our lab mice foraging for crumbs in a two-dimensional environment.
+        The appearing coloured dots represent the spikes of an artificial <a href="https://www.nature.com/articles/nrn3766" target="_blank">grid cell</a>, typically found in the medial entorhinal cortex.
+        A big part of my PhD project consists of trying to understand how these cells migh be involved in spatial computations.<br>
+        Generated using the amazing <a href="https://github.com/RatInABox-Lab/RatInABox"
             target="_blank">RatInABox</a> package by <a href="https://elifesciences.org/articles/85274"
             target="_blank">George et al (2024)</a>.
     </div>
@@ -183,6 +183,7 @@
     <script>
         // List of video file names
         const videos = [
+            'assets/grid_0.mp4',
             'assets/grid_1.mp4',
             'assets/grid_2.mp4',
             'assets/grid_3.mp4',
@@ -190,8 +191,6 @@
             'assets/grid_5.mp4',
             'assets/grid_6.mp4',
             'assets/grid_7.mp4',
-            'assets/grid_8.mp4',
-            'assets/grid_9.mp4',
         ];
         // Randomly select a video
         const randomVideo = videos[Math.floor(Math.random() * videos.length)];
