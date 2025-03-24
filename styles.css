@@ -162,7 +162,7 @@ html {
 /* Info Title at the Bottom */
 .info-title {
     position: absolute;
-    bottom: 10px;
+    bottom: 20px;
     left: 50%;
     transform: translateX(-50%);
     font-size: 2em;
@@ -185,7 +185,7 @@ html {
 /* Styling when hiding the infoTitle button */
 .hide-info-title {
     opacity: 0;
-    transform: translate(-50%, -20px);
+    transform: translate(-50%);
     pointer-events: none;
     /* Prevents interaction when hidden */
     transition: opacity 0.3s ease, transform 0.3s ease;
@@ -194,7 +194,7 @@ html {
 /* Styling when showing the infoTitle button */
 .show-info-title {
     opacity: 1;
-    transform: translate(-50%, 0);
+    transform: translate(-50%);
     pointer-events: auto;
     transition: opacity 0.3s ease, transform 0.3s ease;
 }
