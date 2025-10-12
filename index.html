@@ -64,9 +64,8 @@
                 <i class="fa-brands fa-bluesky"></i>
             </a> 
             -->
-            <a href="https://www.strava.com/athletes/52643941" target="_blank" aria-label="Strava">
-                <i class="fab fa-strava"></i>
-            </a>
+            <a href="https://www.strava.com/athletes/52643941" target="_blank" aria-label="Strava"> <i
+                    class="fab fa-strava"></i> </a>
             <!--
             <a href="https://scholar.google.com/citations?user=EphKDJ4AAAAJ" target="_blank"
                 aria-label="Google Scholar">
@@ -143,6 +142,13 @@
             if (infoBox.classList.contains('active')) {
                 infoBox.classList.remove('active');
             }
+        }
+
+
+        // Toggle info box visibility
+        function toggleInfoBox() {
+            const infoBox = document.getElementById('infoBox');
+            infoBox.classList.toggle('active');
         }
     </script>
 </body>
