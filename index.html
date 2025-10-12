@@ -39,22 +39,16 @@
             <img src="assets/headshot.jpg" alt="a headshot of me" class="img-fluid mx-auto d-block mb-4"
                 style="max-width: 50%;">
             <h3>PhD Student</h3>
+            <h5>University of Edinburgh</h5>
             <p style="font-size: 10pt;">
-                Hi! My name is Wolf De Wulf and I am a PhD student in the Centre for Discovery Brain Sciences at the
-                University of Edinburgh.<br>
-                I study how neural networks in the brain perform computation.
-                Originally trained as a computer scientist, I am also very interested in open-source software for
-                neuroscience.
-            </p>
-            <p style="font-size: 10pt;">
+                I study how neural networks in the brain perform computation.<br>
+                I work on open-source software for neuroscience.<br>
                 I was a <a href="https://www.cshl.edu/research/neuroscience/neuroai/" target="_blank">NeuroAI intern</a>
-                at CSHL
-                in 2024.<br>
+                at CSHL.<br>
                 I was a <a href="https://neurorse.flatironinstitute.org/events/2025/01/06/summer-2025-internship.html"
-                    target="_blank">NeuroRSE intern</a> at the Flatiron Institute in 2025.<br>
+                    target="_blank">NeuroRSE intern</a> at the Flatiron Institute.<br>
                 I run a lot.<br><br>
-
-                <code>import pynapple 🍍 as 💤</code><br>
+                <code>import 🍍 as 💤</code><br>
             </p>
         </div>
         <!-- CLOSE BUTTON -->
@@ -65,28 +59,33 @@
             <a href="https://orcid.org/0000-0002-0219-3120" target="_blank" aria-label="ORCID">
                 <i class="fab fa-orcid"></i>
             </a>
+            <!--
             <a href="https://bsky.app/profile/wulfdewolf.bsky.social" target="_blank" aria-label="Bluesky">
                 <i class="fa-brands fa-bluesky"></i>
-            </a>
+            </a> 
+            -->
             <a href="https://www.strava.com/athletes/52643941" target="_blank" aria-label="Strava">
                 <i class="fab fa-strava"></i>
             </a>
+            <!--
             <a href="https://scholar.google.com/citations?user=EphKDJ4AAAAJ" target="_blank"
                 aria-label="Google Scholar">
                 <i class="ai ai-google-scholar-square"></i>
             </a>
+            -->
             <a href="https://www.linkedin.com/in/wolf-de-wulf/" target="_blank" aria-label="LinkedIn">
                 <i class="fab fa-linkedin"></i>
             </a>
             <a href="https://github.com/wulfdewolf" target="_blank" aria-label="GitHub">
                 <i class="fab fa-github"></i>
             </a>
-            <a href="assets/cv.pdf" download aria-label="Download CV" target="_blank">
-                <i class="ai ai-cv"></i>
-            </a>
             <a href="https://pynapple.org" target="_blank" aria-label="Pynapple">
                 <img src="https://raw.githubusercontent.com/pynapple-org/pynapple/main/doc/_static/Icon/Pynapple_final_icon.png"
-                    alt="Pynapple Icon" style="max-width: 60px; max-height: 60px; margin-left: -20px; margin-top: -5px;">
+                    alt="Pynapple Icon"
+                    style="max-width: 55px; max-height: 55; margin-left: -18px; margin-top: -5px; margin-right: -18px;">
+            </a>
+            <a href="assets/cv.pdf" download aria-label="Download CV" target="_blank">
+                <i class="ai ai-cv"></i>
             </a>
         </div>
     </div>
@@ -102,93 +101,6 @@
         computations.<br>
         Generated using the amazing <a href="https://github.com/RatInABox-Lab/RatInABox" target="_blank">RatInABox</a>
         package by <a href="https://elifesciences.org/articles/85274" target="_blank">George et al (2024)</a>.
-    </div>
-
-    <!-- BOTTOM BUTTON -->
-    <!--div id="infoTitle" class="info-title" onclick="toggleBotPanel()">projects</div>-->
-
-    <!-- BOTTOM PANEL -->
-    <div id="botPanel" class="new-info-panel">
-        <div class="new-info-content">
-            <div class="project">
-                <h3>spatial computation in the entorhinal cortex</h3>
-                <p>In my PhD project I am trying to get a better idea of how our brains perform spatial computations.
-                    Our lab looks at the medial entorhinal cortex (MEC) in particular, a brain region known for
-                    neurons whose activity correlates with spatial variables.
-                    One striking example is the grid cell, which fires in multiple locations that form a hexagonal grid
-                    (as you might have noticed in the background).
-                </p>
-                <p>
-                    Most models of spatial computation in the MEC are built by wiring up these neuron types in various
-                    ways.
-                    In my first year, I hypothesised that if these functionally defined neurons are indeed the building
-                    blocks of spatial computation,
-                    then their functional identity should be stable across spatial tasks.
-                </p>
-                <p>
-                    I quantified this stability across an open field foraging and a virtual reality navigation task, and
-                    found that
-                    there exist neurons with stable identities, but there are also some that change their identity
-                    depending on the task.
-                    Particularly neurons whose firing is correlated with the animal's speed seem unstable:
-                </p>
-                <img src="assets/stability.png" alt="stability of functional identity in the MEC"
-                    class="img-fluid mx-auto d-block mb-4">
-            </div>
-            <div class="project">
-                <h3>foundation models of primary visual cortex</h3>
-                <p>A project led by <a href="https://bryanli.io/" target="_blank">Bryan Li</a>, who I am very grateful
-                    to be able to work with.
-                <p>The goal here is to leverage machine learning models to extract patterns and learn from the
-                    increasingly large neural recordings
-                    that are being collected in the primary visual cortex (V1) of mice.
-                    We designed a spatiotemporal transformer model and trained it to predict the activity (2-photon
-                    calcium imaging)
-                    of over 8000 V1 neurons from 10 mice.
-                    In terms of pure predictive power we managed to get third place in the <a
-                        href="https://www.sensorium-competition.net/" , target="_blank">Sensorium 2023 competition</a>,
-                    earning us some real estate
-                    in the <a href="https://arxiv.org/abs/2407.09100" target="_blank">retrospective NeurIPS paper</a>
-                    (accepted at NeurIPS2024).
-                </p>
-                <p>However, aside from pure predictive power, we are working on showing that these types of models learn
-                    computational principles
-                    in mouse V1, allowing them to extrapolate and thus making them great hypothesis generators:
-                </p>
-                <img src="assets/vivit.png" alt="evaluating foundation models of mouse V1"
-                    class="img-fluid mx-auto d-block mb-4">
-                <p>
-                    As outlined in the paper from the Andreas Tolias lab on <a
-                        href="https://www.nature.com/articles/s41593-019-0517-x" , target="_blank">"Inception
-                        Loops"</a>,
-                    we are also looking at how these models can be used to generate stimuli that are particularly
-                    interesting to test on real animals,
-                    thereby reducing in vivo experiments.
-                </p>
-            </div>
-            <div class="project">
-                <h3>models of sniff- and odor-driven responses in the olfactory cortex</h3>
-                <p>I was very fortunate to be a NeuroAI intern in the <a href="" target="_blank">Albeanu lab</a> at Cold
-                    Spring Harbor Laboratory, New York.
-                    During this project I designed Poisson Generalised Linear Models (GLMs) to predict the spiking of
-                    olfactory cortex neurons
-                    from sniff and odor features.
-                </p>
-                <p>
-                    Neurons in the olfactory cortex are strongly modulated by sniff cycles, making it very hard to
-                    disentagle
-                    the contributions of any other stimulus with the sniff-driven responses.
-                    With these simple and interpretable single neuron Poisson GLMs, we hope to be able to get a better
-                    understanding
-                    of what the olfactory cortex is actually doing.
-                </p>
-                <p>
-                    Figure coming soon!
-                </p>
-            </div>
-        </div>
-        <!-- CLOSE BUTTON -->
-        <button class="close-bot-btn" onclick="toggleBotPanel()">&#8595;</button>
     </div>
 
     <script>
@@ -222,48 +134,15 @@
                     panel.style.display = 'none';
                     panel.classList.remove('hide-panel-top');
                 }, 500); // Delay for animation to finish before hiding
-
-                infoTitle.classList.remove('hide-info-title');
-                infoTitle.classList.add('show-info-title');
             } else {
                 // Show the top panel
                 panel.style.display = 'flex';
                 panel.classList.add('show-panel-top');
-
-                // Hide the infoTitle button
-                infoTitle.classList.remove('show-info-title');
-                infoTitle.classList.add('hide-info-title');
             }
             // Close the info box if it is open
             if (infoBox.classList.contains('active')) {
                 infoBox.classList.remove('active');
             }
-        }
-
-        function toggleBotPanel() {
-            const newPanel = document.getElementById('botPanel');
-            const title = document.querySelector('.title');
-            const infoBox = document.getElementById('infoBox'); // Select the infoBox
-            title.classList.toggle('hidden');
-            if (newPanel.style.display === 'flex') {
-                newPanel.classList.add('hide-panel-bot');
-                setTimeout(() => {
-                    newPanel.style.display = 'none';
-                }, 500); // Delay for animation to finish before hiding
-            } else {
-                newPanel.style.display = 'flex';
-                newPanel.classList.remove('hide-panel-bot');
-                newPanel.classList.add('show-panel-bot');
-            }
-            // Close the info box if it is open
-            if (infoBox.classList.contains('active')) {
-                infoBox.classList.remove('active');
-            }
-        }
-        // Toggle info box visibility
-        function toggleInfoBox() {
-            const infoBox = document.getElementById('infoBox');
-            infoBox.classList.toggle('active');
         }
     </script>
 </body>
