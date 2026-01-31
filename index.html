@@ -1,156 +1,512 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
-    <link rel="stylesheet" href="styles.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Wolf De Wulf – Twisted Torus Grid Cell Demo</title>
+  
+  <!-- Brain Favicon -->
     <link rel="icon" href="favicon.ico" type="image/x-icon">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
-    <meta name="description" content="Hi! My name is Wolf De Wulf and I am a computer scientist from Brussels.">
 
-    <!-- Global site tag (gtag.js) - Google Analytics -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=YOUR_TRACKING_ID"></script>
-    <script>
-        window.dataLayer = window.dataLayer || [];
-        function gtag() {dataLayer.push(arguments);}
-        gtag('js', new Date());
-        gtag('config', 'G-KMGH263Q9N');
-    </script>
-    <title>Wolf De Wulf</title>
+  <link href="https://fonts.googleapis.com/css2?family=Lexend:wght@600&display=swap" rel="stylesheet">
+  <style>
+    body {
+      margin: 0;
+      background: #f5f5f5;
+      color: #222;
+      font-family: system-ui, sans-serif;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 0 20px;
+      box-sizing: border-box;
+    }
+    #header-container {
+      display: inline-flex;
+      align-items: center;
+      margin-top: 20px;
+      margin-bottom: 40px;
+    }
+    #header {
+      font-family: 'Lexend', sans-serif;
+      font-size: clamp(32px, 8vw, 48px);
+      font-weight: 600;
+    }
+    #torusContainer {
+      width: min(400px, 100%);
+      height: min(240px, 60vw);
+      margin-bottom: 40px;
+    }
+    #arenaCanvas {
+      width: min(400px, 100%);
+      height: min(400px, 100vw);
+      max-height: 400px;
+      background: white;
+      border: 1px solid #bbb;
+      touch-action: none;
+      user-select: none; /* prevent text selection */
+    }
+    .info-btn {
+      position: absolute;
+      width: 28px;
+      height: 28px;
+      border-radius: 50%;
+      background: #222;
+      color: white;
+      border: none;
+      font-size: 16px;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: all 0.3s ease;
+      z-index: 100;
+    }
+    .info-btn:hover {
+      background: #444;
+      transform: scale(1.1);
+    }
+    #infoLeft {
+      position: fixed;
+      bottom: 20px;
+      left: 20px;
+    }
+    #infoRight {
+      position: relative;
+      display: inline-block;
+      margin-left: 12px;
+      width: 20px;
+      height: 20px;
+      font-size: 12px;
+    }
+    #header-container {
+      display: inline-flex;
+      align-items: flex-end;
+      margin-top: 20px;
+      margin-bottom: 40px;
+    }
+    .modal {
+      display: none;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0,0,0,0.5);
+      z-index: 200;
+      align-items: center;
+      justify-content: center;
+    }
+    .modal.active {
+      display: flex;
+    }
+    .modal-content {
+      background: white;
+      padding: 30px;
+      border-radius: 12px;
+      max-width: 500px;
+      width: 90%;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.3);
+      position: relative;
+    }
+    .close-btn {
+      position: absolute;
+      top: 15px;
+      right: 15px;
+      background: none;
+      border: none;
+      font-size: 24px;
+      cursor: pointer;
+      color: #666;
+      width: 30px;
+      height: 30px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 50%;
+      transition: all 0.2s;
+    }
+    .close-btn:hover {
+      background: #f0f0f0;
+      color: #222;
+    }
+    .modal-content h2 {
+      margin-top: 0;
+      font-family: 'Lexend', sans-serif;
+      color: #222;
+    }
+    .modal-content p {
+      line-height: 1.6;
+      color: #555;
+    }
+    .profile-section {
+      display: flex;
+      gap: 20px;
+      align-items: flex-start;
+      margin-bottom: 20px;
+    }
+    .profile-image {
+      width: 120px;
+      height: auto;
+      object-fit: cover;
+      flex-shrink: 0;
+    }
+    .profile-text {
+      flex: 1;
+    }
+    .profile-text p:first-child {
+      margin-top: 0;
+    }
+    .social-links {
+      display: flex;
+      gap: 15px;
+      margin-top: 20px;
+      flex-wrap: wrap;
+    }
+    .social-links a {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      padding: 8px 12px;
+      background: #f0f0f0;
+      border-radius: 6px;
+      text-decoration: none;
+      color: #222;
+      transition: all 0.2s;
+      font-size: 14px;
+    }
+    .social-links a:hover {
+      background: #e0e0e0;
+      transform: translateY(-2px);
+    }
+    .social-icon {
+      width: 20px;
+      height: 20px;
+    }
+    @media (max-width: 600px) {
+      .profile-section {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+      }
+      .modal-content {
+        padding: 20px;
+      }
+    }
+  </style>
 </head>
-
 <body>
 
-    <!-- Background Video -->
-    <video class="background-video" autoplay loop muted playsinline loading="lazy" disablepictureinpicture>
-        <source id="videoSource" type="video/mp4">
-        Your browser does not support the video tag.
-    </video>
+<div id="header-container">
+  <div id="header">Wolf De Wulf</div>
+  <button class="info-btn" id="infoRight">i</button>
+</div>
+<div id="torusContainer"></div>
+<canvas id="arenaCanvas" width="400" height="400"></canvas>
 
-    <!-- TOP BUTTON -->
-    <div class="title" onclick="toggleTopPanel()">Wolf De Wulf</div>
+<!-- Information Buttons -->
+<button class="info-btn" id="infoLeft">i</button>
 
-    <!-- TOP PANEL -->
-    <div id="topPanel" class="info-panel">
-        <div class="info-content">
-            <img src="assets/headshot.jpg" alt="a headshot of me" class="img-fluid mx-auto d-block mb-4"
-                style="max-width: 50%;">
-            <h3>PhD Student</h3>
-            <h5>University of Edinburgh</h5>
-            <p style="font-size: 10pt;">
-                I study how neural networks in the brain perform computation.<br>
-                I work on open-source software for neuroscience.<br>
-                I was a <a href="https://www.cshl.edu/research/neuroscience/neuroai/" target="_blank">NeuroAI intern</a>
-                at CSHL.<br>
-                I was a <a href="https://neurorse.flatironinstitute.org/events/2025/01/06/summer-2025-internship.html"
+<!-- Modal for Grid Cells Info (Left Button) -->
+<div class="modal" id="modalLeft">
+  <div class="modal-content">
+    <button class="close-btn" onclick="closeModal('modalLeft')">×</button>
+    <h2>Grid Cells</h2>
+    <p><a href="https://www.nature.com/articles/nature03721"
+          target="_blank">Grid cells</a> are neurons in the entorhinal cortex that fire in a triangular lattice pattern as an animal navigates space. 
+    They are thought to provide the neural substrate for path integration, the brain's ability to track position through self-motion.
+    <p>This demo visualises a <a href="https://physoc.onlinelibrary.wiley.com/doi/10.1113/JP270630"
+       target="_blank">continuous attractor network model of grid cells</a> using a twisted torus topology. 
+    As you move in the square arena, the activity "bump" on the torus moves accordingly. 
+    The red dots show where a randomly chosen grid cell fires, revealing the characteristic triangular lattice that emerges from the toroidal geometry.
+    </p>
+  </div>
+</div>
+
+<!-- Modal for Portfolio Info (Right Button) -->
+<div class="modal" id="modalRight">
+  <div class="modal-content">
+    <button class="close-btn" onclick="closeModal('modalRight')">×</button>
+    <h2>Wolf De Wulf</h2>
+    <div class="profile-section">
+      <img src="/assets/profile.jpg" alt="Wolf De Wulf" class="profile-image" onerror="this.style.display='none'">
+      <div class="profile-text">
+      <p> PhD student at the University of Edinburgh<p>
+      <p>I study how neural networks in the brain perform computation.
+         For my PhD, I investigate spatial computations in the entorhinal cortex.
+         In my free time, I work on open-source software for neuroscience.<p>
+      <p>I was a <a href="https://www.cshl.edu/research/neuroscience/neuroai/" target="_blank">NeuroAI intern</a> at Cold Spring Harbor Laboratory.<br>
+         I was a <a href="https://neurorse.flatironinstitute.org/events/2025/01/06/summer-2025-internship.html"
                     target="_blank">NeuroRSE intern</a> at the Flatiron Institute.<br>
-                I run a lot.<br><br>
-                <code>import 🍍 as 💤</code><br>
-            </p>
-        </div>
-        <!-- CLOSE BUTTON -->
-        <button class="close-top-btn" onclick="toggleTopPanel()">&#8593;</button>
-
-        <!-- Social Media Icons Row -->
-        <div class="social-icons">
-            <a href="https://orcid.org/0000-0002-0219-3120" target="_blank" aria-label="ORCID">
-                <i class="fab fa-orcid"></i>
-            </a>
-            <!--
-            <a href="https://bsky.app/profile/wulfdewolf.bsky.social" target="_blank" aria-label="Bluesky">
-                <i class="fa-brands fa-bluesky"></i>
-            </a> 
-            -->
-            <a href="https://www.strava.com/athletes/52643941" target="_blank" aria-label="Strava"> <i
-                    class="fab fa-strava"></i> </a>
-            <!--
-            <a href="https://scholar.google.com/citations?user=EphKDJ4AAAAJ" target="_blank"
-                aria-label="Google Scholar">
-                <i class="ai ai-google-scholar-square"></i>
-            </a>
-            -->
-            <a href="https://www.linkedin.com/in/wolf-de-wulf/" target="_blank" aria-label="LinkedIn">
-                <i class="fab fa-linkedin"></i>
-            </a>
-            <a href="https://github.com/wulfdewolf" target="_blank" aria-label="GitHub">
-                <i class="fab fa-github"></i>
-            </a>
-            <a href="https://pynapple.org" target="_blank" aria-label="Pynapple">
-                <img src="https://raw.githubusercontent.com/pynapple-org/pynapple/main/doc/_static/Icon/Pynapple_final_icon.png"
-                    alt="Pynapple Icon"
-                    style="max-width: 55px; max-height: 55; margin-left: -18px; margin-top: -5px; margin-right: -18px;">
-            </a>
-            <a href="assets/cv.pdf" download aria-label="Download CV" target="_blank">
-                <i class="ai ai-cv"></i>
-            </a>
-        </div>
+         I run a lot.
+      <p>
+      <code>import 🍍 as 💤</code><br><p>
+      </div>
     </div>
-    <!-- Information Icon and Box -->
-    <i class="fas fa-info-circle info-icon" onclick="toggleInfoBox()"></i>
-    <div class="info-box" id="infoBox">
-        What you are seeing here is a visualisation of one of our lab mice foraging for crumbs in a two-dimensional
-        environment.
-        The appearing coloured dots represent the spikes of an artificial <a
-            href="https://www.nature.com/articles/nrn3766" target="_blank">grid cell</a>, typically found in the medial
-        entorhinal cortex.
-        A big part of my PhD project consists of trying to understand how these cells might be involved in spatial
-        computations.<br>
-        Generated using the amazing <a href="https://github.com/RatInABox-Lab/RatInABox" target="_blank">RatInABox</a>
-        package by <a href="https://elifesciences.org/articles/85274" target="_blank">George et al (2024)</a>.
+    <div class="social-links">
+      <a href="https://orcid.org/0000-0002-0219-3120" target="_blank" rel="noopener">
+        <svg class="social-icon" viewBox="0 0 24 24" fill="currentColor">
+          <path d="M12 0C5.372 0 0 5.372 0 12s5.372 12 12 12 12-5.372 12-12S18.628 0 12 0zM7.369 4.378c.525 0 .947.431.947.947s-.422.947-.947.947a.95.95 0 0 1-.947-.947c0-.525.422-.947.947-.947zm-.722 3.038h1.444v10.041H6.647V7.416zm3.562 0h3.9c3.712 0 5.344 2.653 5.344 5.025 0 2.578-2.016 5.016-5.325 5.016h-3.919V7.416zm1.444 1.303v7.444h2.297c2.359 0 3.925-1.622 3.925-3.722 0-2.016-1.622-3.722-3.925-3.722h-2.297z"/>
+        </svg>
+        ORCID
+      </a>
+      <a href="https://linkedin.com/in/wolf-de-wulf" target="_blank" rel="noopener">
+        <svg class="social-icon" viewBox="0 0 24 24" fill="currentColor">
+          <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
+        </svg>
+        LinkedIn
+      </a>
+      <a href="https://github.com/wulfdewolf" target="_blank" rel="noopener">
+        <svg class="social-icon" viewBox="0 0 24 24" fill="currentColor">
+          <path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"/>
+        </svg>
+        GitHub
+      </a>
+      <a href="https://www.strava.com/athletes/52643941" target="_blank" rel="noopener">
+        <svg class="social-icon" viewBox="0 0 24 24" fill="#FC4C02">
+          <path d="M15.387 17.944l-2.089-4.116h-3.065L15.387 24l5.15-10.172h-3.066m-7.008-5.599l2.836 5.598h4.172L10.463 0l-7 13.828h4.169"/>
+        </svg>
+        Strava
+      </a>
+      <a href="/assets/cv.pdf" target="_blank" rel="noopener">
+        <svg class="social-icon" viewBox="0 0 24 24" fill="currentColor">
+          <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8l-6-6zm-1 2l5 5h-5V4zM8 18v-1h8v1H8zm0-4v-1h8v1H8zm0-4v-1h5v1H8z"/>
+        </svg>
+        CV
+      </a>
     </div>
+  </div>
+</div>
 
-    <script>
-        // List of video file names
-        const videos = [
-            'assets/grid_0.mp4',
-            'assets/grid_1.mp4',
-            'assets/grid_2.mp4',
-            'assets/grid_3.mp4',
-            'assets/grid_4.mp4',
-            'assets/grid_5.mp4',
-            'assets/grid_6.mp4',
-            'assets/grid_7.mp4',
-        ];
-        // Randomly select a video
-        const randomVideo = videos[Math.floor(Math.random() * videos.length)];
-        document.getElementById('videoSource').src = randomVideo;
+<script>
+// Modal controls
+function openModal(modalId) {
+  document.getElementById(modalId).classList.add('active');
+}
 
-        // Function to toggle the top panel and the infoTitle button
-        const infoTitle = document.getElementById('infoTitle');
-        function toggleTopPanel() {
-            const panel = document.getElementById('topPanel');
-            const infoTitle = document.getElementById('infoTitle'); // Select the infoTitle button
-            const infoBox = document.getElementById('infoBox'); // Select the infoBox
+function closeModal(modalId) {
+  document.getElementById(modalId).classList.remove('active');
+}
 
-            if (panel.classList.contains('show-panel-top')) {
-                // Hide the top panel
-                panel.classList.remove('show-panel-top');
-                panel.classList.add('hide-panel-top');
-                setTimeout(() => {
-                    panel.style.display = 'none';
-                    panel.classList.remove('hide-panel-top');
-                }, 500); // Delay for animation to finish before hiding
-            } else {
-                // Show the top panel
-                panel.style.display = 'flex';
-                panel.classList.add('show-panel-top');
-            }
-            // Close the info box if it is open
-            if (infoBox.classList.contains('active')) {
-                infoBox.classList.remove('active');
-            }
-        }
+// Click outside modal to close
+document.querySelectorAll('.modal').forEach(modal => {
+  modal.addEventListener('click', (e) => {
+    if (e.target === modal) {
+      modal.classList.remove('active');
+    }
+  });
+});
 
+// Button event listeners
+document.getElementById('infoLeft').addEventListener('click', () => openModal('modalLeft'));
+document.getElementById('infoRight').addEventListener('click', () => openModal('modalRight'));
+</script>
 
-        // Toggle info box visibility
-        function toggleInfoBox() {
-            const infoBox = document.getElementById('infoBox');
-            infoBox.classList.toggle('active');
-        }
-    </script>
+<script src="https://cdn.jsdelivr.net/npm/three@0.160.0/build/three.min.js"></script>
+<script>
+/**********************
+ * 1. Arena (2D)
+ **********************/
+const arenaCanvas = document.getElementById("arenaCanvas");
+const ctx = arenaCanvas.getContext("2d");
+let pos = { x: 0.5, y: 0.5 };
+
+// Responsive canvas sizing
+function resizeCanvas() {
+  const container = arenaCanvas.parentElement;
+  const size = Math.min(400, window.innerWidth - 40);
+  arenaCanvas.width = size;
+  arenaCanvas.height = size;
+  arenaCanvas.style.width = size + 'px';
+  arenaCanvas.style.height = size + 'px';
+}
+
+window.addEventListener('resize', () => {
+  resizeCanvas();
+  drawArena();
+});
+
+resizeCanvas();
+
+// Store small red spike dots
+const spikeDots = [];
+const spikeThresholdDist = 10; // minimal distance between consecutive spikes
+
+/**********************
+ * Draw arena
+ **********************/
+function drawArena(){
+  const size = arenaCanvas.width;
+  ctx.clearRect(0, 0, size, size);
+
+  // Draw all spike dots
+  spikeDots.forEach(p => {
+    ctx.fillStyle = 'red';
+    ctx.beginPath();
+    ctx.arc(p.x, p.y, 4, 0, 2*Math.PI); // small dot radius
+    ctx.fill();
+  });
+
+  // Gray dot
+  ctx.fillStyle = "#777";
+  ctx.beginPath();
+  ctx.arc(pos.x*size, pos.y*size, 9, 0, 2*Math.PI);
+  ctx.fill();
+
+  ctx.strokeStyle = "#999";
+  ctx.strokeRect(0, 0, size, size);
+}
+
+/**********************
+ * Update dot
+ **********************/
+function updatePos(e){
+  e.preventDefault(); // prevent browser default drag/selection
+  const r = arenaCanvas.getBoundingClientRect();
+  pos.x = Math.min(1, Math.max(0, (e.clientX - r.left)/r.width));
+  pos.y = Math.min(1, Math.max(0, (e.clientY - r.top)/r.height));
+}
+
+arenaCanvas.addEventListener("pointerdown", updatePos);
+arenaCanvas.addEventListener("pointermove", e => { if(e.buttons===1) updatePos(e); });
+
+/**********************
+ * 2. Three.js setup
+ **********************/
+const scene = new THREE.Scene();
+scene.background = new THREE.Color(0xf5f5f5);
+
+const torusContainer = document.getElementById("torusContainer");
+const containerWidth = Math.min(400, window.innerWidth - 40);
+const containerHeight = Math.min(240, containerWidth * 0.6);
+
+const camera = new THREE.PerspectiveCamera(40, containerWidth/containerHeight, 0.1, 100);
+camera.position.set(6,2,0);
+camera.lookAt(0,0,0);
+
+const renderer = new THREE.WebGLRenderer({antialias:true});
+renderer.setSize(containerWidth, containerHeight);
+torusContainer.appendChild(renderer.domElement);
+
+// Handle window resize for Three.js
+window.addEventListener('resize', () => {
+  const newWidth = Math.min(400, window.innerWidth - 40);
+  const newHeight = Math.min(240, newWidth * 0.6);
+  camera.aspect = newWidth / newHeight;
+  camera.updateProjectionMatrix();
+  renderer.setSize(newWidth, newHeight);
+});
+
+scene.add(new THREE.AmbientLight(0xffffff,0.85));
+const light = new THREE.DirectionalLight(0xffffff,0.6);
+light.position.set(3,4,5);
+scene.add(light);
+
+/**********************
+ * 3. Twisted Torus grid cells (triangular lattice)
+ **********************/
+const N1 = 40, N2 = 40;
+const R = 1.6, r = 0.5;
+const sigma = 0.5;
+const tiles = 4;
+const cells = [];
+const geom = new THREE.SphereGeometry(0.032,8,8);
+const torusGroup = new THREE.Group();
+scene.add(torusGroup);
+
+// Twist parameter: amount of rotation per full circle around major radius
+const twistAmount = Math.PI / 3; // 60° twist creates triangular lattice
+
+function torusPos(t1, t2){
+  // Apply twist: rotate the minor circle as we go around the major circle
+  const t2Twisted = t2 + twistAmount * (t1 / (2 * Math.PI));
+  
+  return new THREE.Vector3(
+    (R + r * Math.cos(t2Twisted)) * Math.cos(t1),
+    (R + r * Math.cos(t2Twisted)) * Math.sin(t1),
+    r * Math.sin(t2Twisted)
+  );
+}
+
+function s1dist(a,b){
+  const d = Math.abs(a-b);
+  return Math.min(d,2*Math.PI-d);
+}
+
+for(let i=0;i<N1;i++){
+  for(let j=0;j<N2;j++){
+    const t1 = (2*Math.PI*i)/N1;
+    const t2 = (2*Math.PI*j)/N2;
+    const mat = new THREE.MeshStandardMaterial({color:new THREE.Color(0.75,0.75,0.75)});
+    const mesh = new THREE.Mesh(geom,mat);
+    mesh.position.copy(torusPos(t1,t2));
+    torusGroup.add(mesh);
+    cells.push({t1,t2,mesh});
+  }
+}
+
+torusGroup.rotation.x = Math.PI/2 * 0.9;
+
+/**********************
+ * 4. Pick a grid cell
+ **********************/
+const chosenCell = cells[Math.floor(Math.random()*cells.length)];
+
+/**********************
+ * 5. Animation loop
+ **********************/
+function animate(){
+  requestAnimationFrame(animate);
+
+  // Map arena position to torus coordinates with triangular lattice
+  // Apply shear transformation to create triangular lattice
+  const shearFactor = 1 / Math.tan(Math.PI / 3); // cotangent of 60°
+  const x_sheared = pos.x;
+  const y_sheared = pos.y - shearFactor * pos.x;
+  
+  const t1c = (2*Math.PI * tiles * x_sheared) % (2*Math.PI);
+  const t2c = (2*Math.PI * tiles * y_sheared) % (2*Math.PI);
+
+  // Update torus cell colors
+  for(const c of cells){
+    const d1 = s1dist(c.t1,t1c);
+    const d2 = s1dist(c.t2,t2c);
+    const d2tot = d1*d1 + d2*d2;
+    const a = Math.exp(-d2tot/(2*sigma*sigma));
+    
+    // Check if this is the chosen cell
+    if(c === chosenCell){
+      c.mesh.material.color.setRGB(0, 0.5, 1); // bright blue
+      c.mesh.scale.setScalar(2.5); // bigger
+    } else {
+      c.mesh.material.color.setRGB(0.75 + 0.25*a,0.75*(1-a),0.75*(1-a));
+      c.mesh.scale.setScalar(0.5 + 1.3*a);
+    }
+  }
+
+  // Check if bump is near chosen cell
+  const d1_cell = s1dist(chosenCell.t1, t1c);
+  const d2_cell = s1dist(chosenCell.t2, t2c);
+  const act = Math.exp(-(d1_cell*d1_cell + d2_cell*d2_cell)/(2*sigma*sigma));
+
+  if(act > 0.05){
+    const size = arenaCanvas.width;
+    const px = pos.x * size;
+    const py = pos.y * size;
+    const lastDot = spikeDots[spikeDots.length-1];
+    if(!lastDot || Math.hypot(lastDot.x - px, lastDot.y - py) > 10){
+      spikeDots.push({x:px, y:py});
+    }
+  }
+
+  drawArena();
+
+  torusGroup.rotation.z += 0.005;
+
+  renderer.render(scene,camera);
+}
+
+animate();
+</script>
 </body>
-
 </html>
