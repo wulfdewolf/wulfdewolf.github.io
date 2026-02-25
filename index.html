@@ -509,7 +509,7 @@ let currentTile = { i: 0, j: 0 }; // which tile we're in
 let hasMovedOnce = false; // track if user has moved at least once
 
 // Random scale and rotation for torus anchoring in real space
-const randomScale = 1.2 + Math.random() * 0.5; // range [1.2, 1.7] — always large rhombus
+const randomScale = 0.55 + Math.random() ** 2 * 0.2; // range [0.55, 0.75], skewed toward smaller = bigger rhombus on screen
 const randomRotation = Math.random() * 2 * Math.PI; // random rotation angle
 const cosRot = Math.cos(randomRotation);
 const sinRot = Math.sin(randomRotation);
@@ -668,15 +668,15 @@ scene.add(light);
  * 3. Twisted Torus grid cells (triangular lattice)
  **********************/
 const N1 = 40, N2 = 40;
-const R = 1.3, r = 0.8;
-const sigma = 0.5;
+const R = 1.0, r = 1.0;
+const sigma = 0.02; // arena-space units (tile size = 1/tiles = 0.25)
 const tiles = 4;
 const cells = [];
 const geom = new THREE.SphereGeometry(0.032,8,8);
 const torusGroup = new THREE.Group();
 scene.add(torusGroup);
 
-const twistAmount = Math.PI / 3;
+const twistAmount = 2 * Math.PI / Math.sqrt(3); // gives true 60° triangular lattice
 
 function torusPos(t1, t2){
   const t2Twisted = t2 + twistAmount * (t1 / (2 * Math.PI));
@@ -724,19 +724,41 @@ function animate(){
   const px_scaled = px_rot * randomScale + 0.5;
   const py_scaled = py_rot * randomScale + 0.5;
 
-  const shearFactor = 1 / Math.tan(Math.PI / 3);
-  const x_sheared = px_scaled;
-  const y_sheared = py_scaled - shearFactor * px_scaled;
-  
-  const t1c = (2*Math.PI * tiles * x_sheared) % (2*Math.PI);
-  const t2c = (2*Math.PI * tiles * y_sheared) % (2*Math.PI);
+  const shearFactor = 1 / Math.sqrt(3);
+  const t1c = (2*Math.PI * tiles * px_scaled) % (2*Math.PI);
+  const t2c = (2*Math.PI * tiles * (py_scaled - shearFactor * px_scaled)) % (2*Math.PI);
+
+  // Find nearest lattice point accounting for shear coupling
+  function arenaDistSq(dt1, dt2) {
+    // dt1, dt2 are raw angular differences (not wrapped)
+    // Convert to arena displacements: dx = dt1/(2pi*tiles), dy = (dt2 + sh*dt1)/(2pi*tiles)
+    const sh = 1 / Math.sqrt(3);
+    const scale = 2 * Math.PI * tiles;
+    const dx = dt1 / scale;
+    const dy = (dt2 + sh * dt1) / scale;
+    return dx*dx + dy*dy;
+  }
+
+  function nearestDist2(t1a, t2a, t1b, t2b) {
+    // Find minimum arena distance over all lattice wrappings (n,m in -1,0,1)
+    let best = Infinity;
+    const dt1_raw = t1a - t1b;
+    const dt2_raw = t2a - t2b;
+    for(let n = -1; n <= 1; n++) {
+      for(let m = -1; m <= 1; m++) {
+        const dt1 = dt1_raw + n * 2 * Math.PI;
+        const dt2 = dt2_raw + m * 2 * Math.PI;
+        const d2 = arenaDistSq(dt1, dt2);
+        if(d2 < best) best = d2;
+      }
+    }
+    return best;
+  }
 
   for(const c of cells){
-    const d1 = s1dist(c.t1,t1c);
-    const d2 = s1dist(c.t2,t2c);
-    const d2tot = d1*d1 + d2*d2;
+    const d2tot = nearestDist2(c.t1, c.t2, t1c, t2c);
     const a = Math.exp(-d2tot/(2*sigma*sigma));
-    
+
     if(c === chosenCell){
       c.mesh.material.color.setRGB(0.4, 0.6, 1);
       c.mesh.scale.setScalar(2.5);
@@ -750,9 +772,7 @@ function animate(){
     }
   }
 
-  const d1_cell = s1dist(chosenCell.t1, t1c);
-  const d2_cell = s1dist(chosenCell.t2, t2c);
-  const act = Math.exp(-(d1_cell*d1_cell + d2_cell*d2_cell)/(2*sigma*sigma));
+  const act = Math.exp(-nearestDist2(chosenCell.t1, chosenCell.t2, t1c, t2c)/(2*sigma*sigma));
 
   if(act > 0.05){
     const size = arenaCanvas.width;
