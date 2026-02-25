@@ -9,6 +9,7 @@
     <link rel="icon" href="favicon.ico" type="image/x-icon">
 
   <link href="https://fonts.googleapis.com/css2?family=Lexend:wght@600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Patrick+Hand&display=swap" rel="stylesheet">
   <style>
     body {
       margin: 0;
@@ -32,11 +33,7 @@
       font-size: clamp(32px, 8vw, 48px);
       font-weight: 600;
     }
-    #torusContainer {
-      width: min(400px, 100%);
-      height: min(240px, 60vw);
-      margin-bottom: 40px;
-    }
+    /* #torusContainer dimensions now set in #torus-hint-wrapper context */
     #arenaCanvas {
       width: min(400px, 100%);
       height: min(400px, 100vw);
@@ -46,6 +43,10 @@
       touch-action: none;
       user-select: none; /* prevent text selection */
       border-radius: 8px;
+    }
+    #arena-wrapper {
+      position: relative;
+      width: min(400px, 100%);
     }
     .info-btn {
       position: absolute;
@@ -221,6 +222,82 @@
         right: 10px;
       }
     }
+
+    /* ── Tutorial annotations ── */
+    .tutorial-hint {
+      pointer-events: none;
+      z-index: 50;
+      font-family: 'Patrick Hand', cursive;
+      font-size: 14px;
+      color: #2c3e50;
+      opacity: 1;
+      transition: opacity 1.2s ease;
+    }
+    .tutorial-hint.hidden {
+      opacity: 0;
+    }
+    .tutorial-hint svg {
+      display: block;
+      overflow: visible;
+      flex-shrink: 0;
+    }
+    .tutorial-hint .label {
+      line-height: 1.35;
+    }
+
+    /* ── Arena wrapper: relative so hint can be absolute inside it ── */
+    #arena-wrapper {
+      position: relative;
+      width: min(400px, 100%);
+    }
+    /* Arena hint: right side of canvas, arrow points LEFT toward dot at ~30% from left.
+       Absolutely positioned so it never affects layout. */
+    #hint-arena {
+      position: absolute;
+      top: calc(30% - 8px);
+      left: 36%;
+      display: flex;
+      flex-direction: row;
+      align-items: flex-start;
+      gap: 8px;
+      overflow: visible;
+    }
+
+    /* ── Torus wrapper: fixed height block, hint sits absolutely below torus ── */
+    #torus-hint-wrapper {
+      position: relative;
+      width: min(400px, 100%);
+      /* fixed total height = torus height + space for hint below, so nothing shifts */
+      height: calc(min(240px, 60vw) + 48px);
+      margin-bottom: 0;
+    }
+    #torusContainer {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: min(240px, 60vw);
+    }
+    /* Torus hint: centred below torus, arrow points up to torus centre */
+    #hint-torus {
+      position: absolute;
+      top: min(240px, 60vw);
+      left: 0;
+      right: 0;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding-top: 6px;
+    }
+
+    @keyframes wobble {
+      0%, 100% { transform: translateY(0px); }
+      40%       { transform: translateY(-4px); }
+      70%       { transform: translateY(2px); }
+    }
+    .tutorial-hint svg {
+      animation: wobble 2.6s ease-in-out infinite;
+    }
   </style>
 </head>
 <body>
@@ -229,8 +306,37 @@
   <div id="header">Wolf De Wulf</div>
   <button class="info-btn" id="infoRight">i</button>
 </div>
-<div id="torusContainer"></div>
-<canvas id="arenaCanvas" width="400" height="400"></canvas>
+
+<!-- Torus container wrapped for hint positioning -->
+<div id="torus-hint-wrapper">
+  <div id="torusContainer">
+    <!-- Three.js canvas inserted here -->
+  </div>
+  <!-- Torus hint: centred below torus, arrow points straight up to torus centre -->
+  <div class="tutorial-hint" id="hint-torus">
+    <!-- upward arrow, centred -->
+    <svg width="16" height="18" viewBox="0 0 16 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <path d="M8 16 C8 12, 8 8, 8 4" stroke="#2c3e50" stroke-width="2" stroke-linecap="round" fill="none"/>
+      <path d="M8 4 L3 10 M8 4 L13 10" stroke="#2c3e50" stroke-width="2" stroke-linecap="round"/>
+    </svg>
+    <div class="label" style="white-space:normal; text-align:center; margin-top:4px;">We think this is happening in your brain!</div>
+  </div>
+</div>
+
+<!-- Arena canvas with tutorial hint -->
+<div id="arena-wrapper">
+  <canvas id="arenaCanvas" width="400" height="400"></canvas>
+
+  <!-- Arena hint: right side, arrow points LEFT toward dot at ~30% from left -->
+  <div class="tutorial-hint" id="hint-arena">
+    <!-- arrow tip uses overflow:visible to reach dot. left=36%=144px, tip x=-16 → canvas 128px ✓ -->
+    <svg width="40" height="16" viewBox="-20 0 40 16" fill="none" xmlns="http://www.w3.org/2000/svg" style="flex-shrink:0; overflow:visible;">
+      <path d="M18 8 C8 8, -2 8, -14 8" stroke="#2c3e50" stroke-width="2" stroke-linecap="round" fill="none"/>
+      <path d="M-14 8 L-6 3 M-14 8 L-6 13" stroke="#2c3e50" stroke-width="2" stroke-linecap="round"/>
+    </svg>
+    <div class="label" style="max-width:130px; white-space:normal; text-align:left;">This is you. Try navigating this ecological, square environment.</div>
+  </div>
+</div>
 
 <!-- Information Buttons -->
 <button class="info-btn" id="infoLeft">i</button>
@@ -328,6 +434,44 @@ document.querySelectorAll('.modal').forEach(modal => {
 // Button event listeners
 document.getElementById('infoLeft').addEventListener('click', () => openModal('modalLeft'));
 document.getElementById('infoRight').addEventListener('click', () => openModal('modalRight'));
+
+// ── Tutorial hint logic ──
+const hintArena = document.getElementById('hint-arena');
+const hintTorus = document.getElementById('hint-torus');
+let hintsVisible = true;
+
+function dismissHints() {
+  if (!hintsVisible) return;
+  hintsVisible = false;
+  hintArena.classList.add('hidden');
+  hintTorus.classList.add('hidden');
+  // Remove from DOM after fade finishes
+  setTimeout(() => {
+    hintArena.remove();
+    hintTorus.remove();
+  }, 1300);
+}
+
+function dismissArenaHint() {
+  if (!hintsVisible) return;
+  hintArena.classList.add('hidden');
+  setTimeout(() => { hintArena.remove(); }, 1300);
+}
+
+// Auto-dismiss both after 10s
+const autoTimer = setTimeout(dismissHints, 10000);
+
+// Dismiss arena hint on first pointer interaction with the canvas
+// (we hook into the pointerdown / first pointermove with button pressed)
+let arenaHintDismissed = false;
+function onFirstArenaInteraction() {
+  if (arenaHintDismissed) return;
+  arenaHintDismissed = true;
+  hintArena.classList.add('hidden');
+  setTimeout(() => {
+    if (hintArena.parentNode) hintArena.remove();
+  }, 1300);
+}
 </script>
 
 <script src="https://cdn.jsdelivr.net/npm/three@0.160.0/build/three.min.js"></script>
@@ -365,7 +509,7 @@ let currentTile = { i: 0, j: 0 }; // which tile we're in
 let hasMovedOnce = false; // track if user has moved at least once
 
 // Random scale and rotation for torus anchoring in real space
-const randomScale = 0.5 + Math.random() * 1.5; // random scale between 0.5 and 2.0
+const randomScale = 1.2 + Math.random() * 0.5; // range [1.2, 1.7] — always large rhombus
 const randomRotation = Math.random() * 2 * Math.PI; // random rotation angle
 const cosRot = Math.cos(randomRotation);
 const sinRot = Math.sin(randomRotation);
@@ -374,35 +518,25 @@ const sinRot = Math.sin(randomRotation);
  * Rhombus geometry for 60° twisted torus
  **********************/
 function getRhombusCorners(i, j, size) {
-  // The rhombus must match the shear transformation used in the torus mapping
-  // The shear is: x_sheared = x, y_sheared = y - cot(60°) * x
-  // This means the fundamental domain in the original (x,y) space is a parallelogram
-  
-  const scale = 1 / tiles; // each tile is 1/tiles of the arena
-  const shearFactor = 1 / Math.tan(Math.PI / 3); // cot(60°) = 1/√3
+  const scale = 1 / tiles;
+  const shearFactor = 1 / Math.tan(Math.PI / 3);
   
   const u0 = i, v0 = j;
   const ox = u0 * scale;
   const oy = v0 * scale + shearFactor * u0 * scale;
   
-  // Four corners in transformed space (before applying inverse rotation and scale)
   const corners_transformed = [
-    { x: ox, y: oy }, // (0,0)
-    { x: ox + scale, y: oy + shearFactor * scale }, // (1,0)
-    { x: ox + scale, y: oy + scale + shearFactor * scale }, // (1,1)
-    { x: ox, y: oy + scale } // (0,1)
+    { x: ox, y: oy },
+    { x: ox + scale, y: oy + shearFactor * scale },
+    { x: ox + scale, y: oy + scale + shearFactor * scale },
+    { x: ox, y: oy + scale }
   ];
   
-  // Apply inverse transformations to get back to arena space
   return corners_transformed.map(corner => {
-    // Inverse scale and recenter
     const cx = (corner.x - 0.5) / randomScale;
     const cy = (corner.y - 0.5) / randomScale;
-    
-    // Inverse rotation
     const rx = cx * cosRot + cy * sinRot;
     const ry = -cx * sinRot + cy * cosRot;
-    
     return {
       x: (rx + 0.5) * size,
       y: (ry + 0.5) * size
@@ -411,37 +545,23 @@ function getRhombusCorners(i, j, size) {
 }
 
 function isInsideRhombus(px, py, i, j) {
-  // Transform the point from arena space to torus space
   const px_centered = px - 0.5;
   const py_centered = py - 0.5;
-  
-  // Rotate
   const px_rot = px_centered * cosRot - py_centered * sinRot;
   const py_rot = px_centered * sinRot + py_centered * cosRot;
-  
-  // Scale and recenter
   const px_transformed = px_rot * randomScale + 0.5;
   const py_transformed = py_rot * randomScale + 0.5;
-  
-  // Now check if this transformed point is inside the rhombus tile (i,j)
   const scale = 1 / tiles;
   const shearFactor = 1 / Math.tan(Math.PI / 3);
-  
   const u0 = i, v0 = j;
   const ox = u0 * scale;
   const oy = v0 * scale + shearFactor * u0 * scale;
-  
-  // Transform point to tile coordinates
   const u = px_transformed / scale - u0;
   const v = (py_transformed - oy - shearFactor * u * scale) / scale;
-  
-  // Point is inside if 0 ≤ u ≤ 1 and 0 ≤ v ≤ 1
   return u >= 0 && u <= 1 && v >= 0 && v <= 1;
 }
 
 function findCurrentTile(px, py) {
-  // Search nearby tiles to find which one contains the point
-  // Start from current tile and check neighbors
   const searchRange = 3;
   for (let di = -searchRange; di <= searchRange; di++) {
     for (let dj = -searchRange; dj <= searchRange; dj++) {
@@ -452,7 +572,6 @@ function findCurrentTile(px, py) {
       }
     }
   }
-  // Fallback: return current tile
   return currentTile;
 }
 
@@ -463,12 +582,11 @@ function drawArena(){
   const size = arenaCanvas.width;
   ctx.clearRect(0, 0, size, size);
 
-  // Draw rhombus outline only if user has moved
   if (hasMovedOnce) {
     const corners = getRhombusCorners(currentTile.i, currentTile.j, size);
-    ctx.strokeStyle = '#d4d4d8'; // light gray outline
+    ctx.strokeStyle = '#d4d4d8';
     ctx.lineWidth = 2;
-    ctx.setLineDash([5, 5]); // dashed line
+    ctx.setLineDash([5, 5]);
     ctx.beginPath();
     ctx.moveTo(corners[0].x, corners[0].y);
     for (let i = 1; i < corners.length; i++) {
@@ -476,18 +594,16 @@ function drawArena(){
     }
     ctx.closePath();
     ctx.stroke();
-    ctx.setLineDash([]); // reset to solid line
+    ctx.setLineDash([]);
   }
 
-  // Draw all spike dots
   spikeDots.forEach(p => {
     ctx.fillStyle = 'red';
     ctx.beginPath();
-    ctx.arc(p.x, p.y, 4, 0, 2*Math.PI); // small dot radius
+    ctx.arc(p.x, p.y, 4, 0, 2*Math.PI);
     ctx.fill();
   });
 
-  // Gray dot
   ctx.fillStyle = "#64748b";
   ctx.beginPath();
   ctx.arc(pos.x*size, pos.y*size, 9, 0, 2*Math.PI);
@@ -502,15 +618,15 @@ function drawArena(){
  * Update dot
  **********************/
 function updatePos(e){
-  e.preventDefault(); // prevent browser default drag/selection
+  e.preventDefault();
   const r = arenaCanvas.getBoundingClientRect();
   pos.x = Math.min(1, Math.max(0, (e.clientX - r.left)/r.width));
   pos.y = Math.min(1, Math.max(0, (e.clientY - r.top)/r.height));
-  
-  // Mark that user has moved
   hasMovedOnce = true;
-  
-  // Update current tile
+
+  // Dismiss arena hint on first interaction
+  onFirstArenaInteraction();
+
   currentTile = findCurrentTile(pos.x, pos.y);
 }
 
@@ -535,7 +651,6 @@ const renderer = new THREE.WebGLRenderer({antialias:true});
 renderer.setSize(containerWidth, containerHeight);
 torusContainer.appendChild(renderer.domElement);
 
-// Handle window resize for Three.js
 window.addEventListener('resize', () => {
   const newWidth = Math.min(400, window.innerWidth - 40);
   const newHeight = Math.min(240, newWidth * 0.6);
@@ -553,7 +668,7 @@ scene.add(light);
  * 3. Twisted Torus grid cells (triangular lattice)
  **********************/
 const N1 = 40, N2 = 40;
-const R = 1.3, r = 0.8;  // More balanced radii for circular bump
+const R = 1.3, r = 0.8;
 const sigma = 0.5;
 const tiles = 4;
 const cells = [];
@@ -561,13 +676,10 @@ const geom = new THREE.SphereGeometry(0.032,8,8);
 const torusGroup = new THREE.Group();
 scene.add(torusGroup);
 
-// Twist parameter: amount of rotation per full circle around major radius
-const twistAmount = Math.PI / 3; // 60° twist creates triangular lattice
+const twistAmount = Math.PI / 3;
 
 function torusPos(t1, t2){
-  // Apply twist: rotate the minor circle as we go around the major circle
   const t2Twisted = t2 + twistAmount * (t1 / (2 * Math.PI));
-  
   return new THREE.Vector3(
     (R + r * Math.cos(t2Twisted)) * Math.cos(t1),
     (R + r * Math.cos(t2Twisted)) * Math.sin(t1),
@@ -605,50 +717,39 @@ const chosenCell = cells[Math.floor(Math.random()*cells.length)];
 function animate(){
   requestAnimationFrame(animate);
 
-  // Apply random rotation and scale to position before mapping to torus
   const px_centered = pos.x - 0.5;
   const py_centered = pos.y - 0.5;
-  
-  // Rotate
   const px_rot = px_centered * cosRot - py_centered * sinRot;
   const py_rot = px_centered * sinRot + py_centered * cosRot;
-  
-  // Scale and recenter
   const px_scaled = px_rot * randomScale + 0.5;
   const py_scaled = py_rot * randomScale + 0.5;
 
-  // Map arena position to torus coordinates with triangular lattice
-  // Apply shear transformation to create triangular lattice
-  const shearFactor = 1 / Math.tan(Math.PI / 3); // cotangent of 60°
+  const shearFactor = 1 / Math.tan(Math.PI / 3);
   const x_sheared = px_scaled;
   const y_sheared = py_scaled - shearFactor * px_scaled;
   
   const t1c = (2*Math.PI * tiles * x_sheared) % (2*Math.PI);
   const t2c = (2*Math.PI * tiles * y_sheared) % (2*Math.PI);
 
-  // Update torus cell colors
   for(const c of cells){
     const d1 = s1dist(c.t1,t1c);
     const d2 = s1dist(c.t2,t2c);
     const d2tot = d1*d1 + d2*d2;
     const a = Math.exp(-d2tot/(2*sigma*sigma));
     
-    // Check if this is the chosen cell
     if(c === chosenCell){
-      c.mesh.material.color.setRGB(0.4, 0.6, 1); // soft blue
-      c.mesh.scale.setScalar(2.5); // bigger
+      c.mesh.material.color.setRGB(0.4, 0.6, 1);
+      c.mesh.scale.setScalar(2.5);
     } else {
-      // Color scheme: gray base with red activation
       c.mesh.material.color.setRGB(
-        0.85 + 0.15*a, // red channel: gray to red (0.85 -> 1.0)
-        0.85 - 0.85*a, // green channel: gray to 0 (0.85 -> 0)
-        0.85 - 0.85*a  // blue channel: gray to 0 (0.85 -> 0)
+        0.85 + 0.15*a,
+        0.85 - 0.85*a,
+        0.85 - 0.85*a
       );
       c.mesh.scale.setScalar(0.5 + 1.3*a);
     }
   }
 
-  // Check if bump is near chosen cell
   const d1_cell = s1dist(chosenCell.t1, t1c);
   const d2_cell = s1dist(chosenCell.t2, t2c);
   const act = Math.exp(-(d1_cell*d1_cell + d2_cell*d2_cell)/(2*sigma*sigma));
